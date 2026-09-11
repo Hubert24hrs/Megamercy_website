@@ -180,7 +180,7 @@ export default function SecurityDashboard() {
             </h5>
             <p className="text-xs text-charcoal-600 mt-0.5">
               {biometricUnlocked
-                ? "Welcome, Ambassador. Discretion protocol verified."
+                ? "Keyless access granted. Discretion protocol active."
                 : "Tap fingerprint icon to simulate touchless smart-entry authentication."}
             </p>
           </div>

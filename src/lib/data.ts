@@ -208,44 +208,8 @@ export const SECURITY_FEATURES: SecurityFeature[] = [
   },
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: "test-1",
-    guestName: "Ambassador Marcus V.",
-    title: "Senior Diplomat & International Envoy",
-    country: "Geneva, Switzerland",
-    flag: "🇨🇭",
-    rating: 5,
-    date: "August 2026",
-    quote: "In 22 years of foreign diplomatic service, MegaMercy stands shoulder to shoulder with the finest private residences in Zurich and London. The security protocol is unobtrusive yet airtight, and the peace in Ikoyi is absolute.",
-    verifiedStay: true,
-    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
-  },
-  {
-    id: "test-2",
-    guestName: "Dr. Chioma Adebayo",
-    title: "Managing Partner, Global Equity Partners",
-    country: "London / Lagos",
-    flag: "🇬🇧",
-    rating: 5,
-    date: "July 2026",
-    quote: "The 1Gbps dedicated fiber internet, acoustic silence, and uninterrupted power allowed our advisory board to conduct confidential M&A negotiations with zero friction. The private chef's dinner was sensational.",
-    verifiedStay: true,
-    avatarUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80",
-  },
-  {
-    id: "test-3",
-    guestName: "Jean-Philippe Moreau",
-    title: "Chief Technology Officer, Pan-African Fintech",
-    country: "Paris, France",
-    flag: "🇫🇷",
-    rating: 5,
-    date: "June 2026",
-    quote: "The 3D interactive website gave us an exact representation of the apartment, but walking inside was even more breathtaking. The sunset over the Lagos Lagoon from the private terrace is unforgettable.",
-    verifiedStay: true,
-    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
-  },
-];
+export const TESTIMONIALS: Testimonial[] = [];
+
 
 export const IKOYI_LANDMARKS = [
   {

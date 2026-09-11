@@ -86,7 +86,7 @@ export default function ContactPage() {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Ambassador Marcus Vance"
+                    placeholder="Enter your full name"
                     className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-charcoal-900/15 text-xs text-charcoal-900 placeholder-charcoal-400 focus:outline-none focus:border-bronze-500 shadow-sm"
                   />
                 </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="name@diplomacy.org"
+                    placeholder="Enter your email address"
                     className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-charcoal-900/15 text-xs text-charcoal-900 placeholder-charcoal-400 focus:outline-none focus:border-bronze-500 shadow-sm"
                   />
                 </div>
@@ -111,7 +111,7 @@ export default function ContactPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+234 ... or +1 ..."
+                    placeholder="Enter your phone or WhatsApp number"
                     className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-charcoal-900/15 text-xs text-charcoal-900 placeholder-charcoal-400 focus:outline-none focus:border-bronze-500 shadow-sm"
                   />
                 </div>

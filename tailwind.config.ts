@@ -91,6 +91,15 @@ const config: Config = {
           300: "#ECEEF2",
           400: "#D2D6DF",
         },
+        coastal: {
+          blue: "#0088CC",
+          "blue-hover": "#0073B7",
+          "blue-dark": "#005F99",
+          navy: "#0A192F",
+          "navy-deep": "#001428",
+          teal: "#5EC4B6",
+          sand: "#C5A880",
+        },
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Cinzel", "serif"],

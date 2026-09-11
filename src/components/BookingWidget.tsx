@@ -22,9 +22,18 @@ export default function BookingWidget({
 }: {
   initialCurrency?: CurrencyCode;
 }) {
+  // Helper to format ISO date YYYY-MM-DD
+  const getOffsetDate = (daysAhead: number) => {
+    const d = new Date();
+    d.setDate(d.getDate() + daysAhead);
+    return d.toISOString().split("T")[0];
+  };
+
+  const todayStr = getOffsetDate(0);
   const [currency, setCurrency] = useState<CurrencyCode>(initialCurrency);
-  const [checkInDate, setCheckInDate] = useState("2026-10-15");
-  const [checkOutDate, setCheckOutDate] = useState("2026-10-20");
+  const [checkInDate, setCheckInDate] = useState(getOffsetDate(1));
+  const [checkOutDate, setCheckOutDate] = useState(getOffsetDate(5));
+  const [reservationToken, setReservationToken] = useState("");
   const [guests, setGuests] = useState(2);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
@@ -79,6 +88,8 @@ export default function BookingWidget({
   };
 
   const handleInstantReserve = () => {
+    const token = `MM-${Date.now().toString(36).toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`;
+    setReservationToken(token);
     setBookingConfirmed(true);
   };
 
@@ -127,14 +138,17 @@ export default function BookingWidget({
           <h3 className="text-2xl font-serif font-bold text-charcoal-900">
             Reservation Request Transmitted
           </h3>
+          <div className="inline-block px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono text-bronze-700 font-bold">
+            REFERENCE: {reservationToken}
+          </div>
           <p className="text-xs text-charcoal-600 max-w-md mx-auto leading-relaxed">
-            Your dates ({checkInDate} to {checkOutDate}) for {guests} guests have been locked in our
+            Your dates ({checkInDate} to {checkOutDate}) for {guests} guests have been logged in our
             registry. Our lead butler will connect with you via WhatsApp or Email within 5 minutes to
             finalize identity verification and payment tokens.
           </p>
           <button
             onClick={() => setBookingConfirmed(false)}
-            className="px-6 py-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-charcoal-800 hover:bg-sand-200 transition-colors"
+            className="px-6 py-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-charcoal-800 hover:bg-sand-200 transition-colors font-semibold"
           >
             Modify Reservation Details
           </button>
@@ -151,6 +165,7 @@ export default function BookingWidget({
               </label>
               <input
                 type="date"
+                min={todayStr}
                 value={checkInDate}
                 onChange={(e) => setCheckInDate(e.target.value)}
                 className="w-full bg-transparent text-sm font-medium text-charcoal-900 focus:outline-none"
@@ -165,12 +180,14 @@ export default function BookingWidget({
               </label>
               <input
                 type="date"
+                min={checkInDate || todayStr}
                 value={checkOutDate}
                 onChange={(e) => setCheckOutDate(e.target.value)}
                 className="w-full bg-transparent text-sm font-medium text-charcoal-900 focus:outline-none"
               />
             </div>
           </div>
+
 
           {/* Guests Selector */}
           <div className="p-3.5 rounded-2xl bg-alabaster-50 border border-charcoal-900/15 flex items-center justify-between">

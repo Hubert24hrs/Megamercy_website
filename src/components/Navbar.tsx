@@ -61,6 +61,7 @@ export default function Navbar({
     { label: "Amenities", href: "/amenities" },
     { label: "Security", href: "/security" },
     { label: "Location", href: "/location" },
+    { label: "Reviews", href: "/reviews" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
@@ -163,10 +164,10 @@ export default function Navbar({
           {/* Primary CTA */}
           <Link
             href="/booking"
-            className="px-5 py-2.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-bronze-500/20 transition-all flex items-center gap-2"
+            className="px-5 py-2.5 rounded-xl bg-coastal-blue hover:bg-coastal-blue-hover text-white text-xs font-serif font-bold uppercase tracking-wider shadow-md shadow-coastal-blue/25 transition-all flex items-center gap-2 hover:-translate-y-0.5"
           >
             <Calendar className="w-3.5 h-3.5" />
-            <span>Book Now</span>
+            <span>Check Availability</span>
           </Link>
         </div>
 
