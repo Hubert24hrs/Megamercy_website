@@ -39,8 +39,8 @@ export default function BookingPage() {
           </div>
           <h4 className="text-sm font-bold text-pearl-100">Diplomatic Cancellation</h4>
           <p className="text-xs text-pearl-400 leading-relaxed">
-            Full 100% refund up to 7 days before scheduled check-in. Seamless date adjustments for
-            unforeseen ministerial schedules.
+            Full 100% refund up to 7 days before scheduled check-in. Flexible date modifications for
+            diplomatic delegations and corporate schedules.
           </p>
         </div>
 
@@ -50,8 +50,8 @@ export default function BookingPage() {
           </div>
           <h4 className="text-sm font-bold text-pearl-100">Multi-Rail Payments</h4>
           <p className="text-xs text-pearl-400 leading-relaxed">
-            Pay seamlessly with Paystack or Flutterwave for Nigerian Naira (NGN), or Stripe for USD,
-            GBP, and EUR credit cards.
+            Direct settlement via Paystack or Flutterwave for Nigerian Naira (NGN), or Stripe for USD,
+            GBP, and EUR cards. Zero card data stored on-site.
           </p>
         </div>
 

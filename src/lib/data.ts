@@ -276,6 +276,6 @@ export const IKOYI_LANDMARKS = [
     name: "Lagos Yacht Club & Marina",
     category: "Waterfront Leisure",
     distance: "12 mins",
-    description: "Private sailing berths and luxury boat charters departing across the lagoon.",
+    description: "Private sailing berths and motor yacht charters departing across the lagoon.",
   },
 ];

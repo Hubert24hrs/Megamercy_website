@@ -38,14 +38,15 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-pearl-100 leading-[1.08]">
-            Where Architectural Poise Meets{" "}
-            <span className="gold-gradient-text italic font-normal">Fortress Security</span>
+            A Private Penthouse on Bourdillon Road.{" "}
+            <span className="gold-gradient-text italic font-normal block sm:inline">Built for Quiet Decisions.</span>
           </h1>
 
           <p className="text-base sm:text-lg text-pearl-300 max-w-2xl mx-auto leading-relaxed">
-            Designed for sovereign travelers, corporate leaders, and discerning global guests.
-            Experience 3,400 square feet of curated modernist luxury, panoramic Lagos Lagoon views,
-            and 24/7 diplomatic-grade protection in prime Ikoyi.
+            Overlooking the calm water of Five Cowries Creek, MegaMercy is a single, privately held
+            residence in old Ikoyi. Finished 3.2-meter ceilings and German acoustic glazing seal out
+            the roar of Lagos, backed by synchronized 150kVA generators, pure reverse-osmosis water,
+            and an on-site armed police detail.
           </p>
 
           {/* Primary Action Buttons */}
@@ -256,9 +257,9 @@ export default function HomePage() {
                 At the Center of Lagos's Diplomatic &amp; Financial Power
               </h2>
               <p className="text-xs sm:text-sm text-pearl-300 leading-relaxed">
-                Positioned along the prestigious Bourdillon corridor, MegaMercy provides seamless
-                access to foreign embassies, high-end private clubs, and Lagos’s most celebrated fine
-                dining establishments.
+                Positioned along the prestigious Bourdillon corridor, MegaMercy provides direct,
+                controlled access to foreign embassies, private financial institutions, and established
+                dining on Lugard and Alexander avenues.
               </p>
 
               <div className="space-y-3 pt-2">

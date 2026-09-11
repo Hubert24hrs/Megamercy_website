@@ -320,7 +320,7 @@ export default function HeroScene() {
           </h4>
           <p className="text-xs text-pearl-400 mt-1 leading-relaxed">
             {activeView === "aerial" &&
-              "Seamless integration of outdoor private lounging with panoramic vistas of the Lagos Lagoon, Bourdillon corridor, and Atlantic horizon."}
+              "Direct transition between interior living volume and the private open-air terrace overlooking Five Cowries Creek, the Bourdillon corridor, and the Atlantic horizon."}
             {activeView === "penthouse" &&
               "Triple-glazed acoustic shielding, Bang & Olufsen spatial audio matrix, and custom Italian marble millwork."}
             {activeView === "horizon" &&

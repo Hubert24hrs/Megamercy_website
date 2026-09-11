@@ -22,7 +22,7 @@ export default function InteractiveFloorPlan() {
       name: "Grand Living Pavilion & Terrace",
       sqft: "1,200 sq.ft (111 m²)",
       color: "border-gold-500 bg-gold-500/10",
-      description: "Open-concept panoramic lounge with seamless sliding acoustic glass doors leading to the cantilevered Ikoyi sunset terrace.",
+      description: "Open-concept panoramic lounge with Schüco sliding acoustic glass doors opening directly onto the cantilevered Ikoyi sunset terrace.",
       amenities: ["B&O 85' OLED Matrix", "Sonos Arc Sound System", "Sub-zero Wine Chiller", "Terrace Loungers"],
       dimensions: "12.5m × 8.9m",
     },

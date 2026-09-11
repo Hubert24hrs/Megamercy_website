@@ -96,7 +96,7 @@ export default function AmenitiesPage() {
             Private Chauffeurs, Yacht Charters &amp; Executive Security
           </h3>
           <p className="text-xs sm:text-sm text-pearl-300 leading-relaxed">
-            Our butler service coordinates seamless transfers directly from Murtala Muhammed
+            Our butler service coordinates direct, uninterrupted transfers from Murtala Muhammed
             Airport tarmac, private boat charters departing from Lagos Yacht Club, and armed
             diplomatic protection details upon advance request.
           </p>
