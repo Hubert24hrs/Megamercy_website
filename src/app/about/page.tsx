@@ -13,14 +13,14 @@ export default function AboutPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-subtle text-xs font-mono tracking-widest text-gold-400 uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono tracking-widest text-bronze-700 uppercase font-semibold shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>ORIGIN &amp; PHILOSOPHY</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-serif font-black text-pearl-100">
+        <h1 className="text-4xl sm:text-6xl font-serif font-black text-charcoal-900">
           The Genesis of Sovereign Living
         </h1>
-        <p className="text-sm sm:text-base text-pearl-300 leading-relaxed">
+        <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           Founded on the conviction that visiting leaders and global visionaries in Lagos deserve an
           uncompromising sanctuary of absolute discretion, architectural poise, and modern fortress
           security.
@@ -29,8 +29,8 @@ export default function AboutPage() {
 
       {/* Main Story Narrative */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-6 text-sm text-pearl-300 leading-relaxed">
-          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-pearl-100">
+        <div className="space-y-6 text-sm text-charcoal-600 leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-charcoal-900">
             A Vision Born from Global Experience
           </h2>
           <p>
@@ -53,7 +53,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-gold-500/20 shadow-2xl">
+        <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-bronze-400/30 shadow-xl">
           <img
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
             alt="MegaMercy Architecture"
@@ -65,43 +65,43 @@ export default function AboutPage() {
       {/* Core Values Grid */}
       <div className="space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-mono text-gold-400 uppercase tracking-widest block">
+          <span className="text-xs font-mono text-bronze-600 uppercase tracking-widest block font-semibold">
             OUR CORNERSTONES
           </span>
-          <h3 className="text-3xl font-serif font-bold text-pearl-100">
+          <h3 className="text-3xl font-serif font-bold text-charcoal-900">
             The MegaMercy Pillars
           </h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-8 rounded-3xl glass-panel border border-white/5 space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center">
+          <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-charcoal-900/10 space-y-4 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-sand-100 border border-bronze-400/30 text-bronze-700 flex items-center justify-center shadow-sm">
               <Shield className="w-6 h-6" />
             </div>
-            <h4 className="text-xl font-serif font-bold text-pearl-100">Diplomatic Discretion</h4>
-            <p className="text-xs text-pearl-400 leading-relaxed">
+            <h4 className="text-xl font-serif font-bold text-charcoal-900">Diplomatic Discretion</h4>
+            <p className="text-xs text-charcoal-600 leading-relaxed">
               We treat your presence as classified. No public rosters, strict NDA adherence for all
               household staff, and military-grade biometric access.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl glass-panel border border-white/5 space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+          <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-charcoal-900/10 space-y-4 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-500/30 text-emerald-700 flex items-center justify-center shadow-sm">
               <Sparkles className="w-6 h-6" />
             </div>
-            <h4 className="text-xl font-serif font-bold text-pearl-100">Architectural Precision</h4>
-            <p className="text-xs text-pearl-400 leading-relaxed">
+            <h4 className="text-xl font-serif font-bold text-charcoal-900">Architectural Precision</h4>
+            <p className="text-xs text-charcoal-600 leading-relaxed">
               From Bang &amp; Olufsen acoustic systems to hand-selected Calacatta marble and Miele
               precision appliances, compromise does not exist.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl glass-panel border border-white/5 space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
+          <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-charcoal-900/10 space-y-4 shadow-sm hover:shadow-md transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-400/30 text-blue-700 flex items-center justify-center shadow-sm">
               <Heart className="w-6 h-6" />
             </div>
-            <h4 className="text-xl font-serif font-bold text-pearl-100">Intuitive Hospitality</h4>
-            <p className="text-xs text-pearl-400 leading-relaxed">
+            <h4 className="text-xl font-serif font-bold text-charcoal-900">Intuitive Hospitality</h4>
+            <p className="text-xs text-charcoal-600 leading-relaxed">
               True luxury is invisible: anticipating your espresso preference, preparing your evening
               turndown, and ensuring your itinerary flows without a ripple.
             </p>
@@ -110,17 +110,17 @@ export default function AboutPage() {
       </div>
 
       {/* CTA */}
-      <div className="p-10 rounded-3xl bg-obsidian-900 border border-gold-500/20 text-center space-y-4">
-        <h3 className="text-2xl font-serif font-bold text-pearl-100">
+      <div className="p-10 rounded-3xl bg-sand-50 border border-bronze-400/30 text-center space-y-4 shadow-lg">
+        <h3 className="text-2xl font-serif font-bold text-charcoal-900">
           Experience the MegaMercy Standard
         </h3>
-        <p className="text-xs text-pearl-400 max-w-lg mx-auto">
+        <p className="text-xs text-charcoal-600 max-w-lg mx-auto">
           Contact our lead butler today for custom delegation packages or private viewings.
         </p>
         <div className="pt-2">
           <Link
             href="/booking"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-xs uppercase tracking-wider hover:bg-gold-400 transition-colors shadow-lg shadow-gold-500/20"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-bronze-500 text-white font-bold text-xs uppercase tracking-wider hover:bg-bronze-600 transition-colors shadow-md shadow-bronze-500/20"
           >
             <span>Reserve Residence</span>
             <ArrowRight className="w-4 h-4" />

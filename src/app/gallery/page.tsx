@@ -54,14 +54,14 @@ export default function GalleryPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-24">
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-subtle text-xs font-mono tracking-widest text-gold-400 uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono tracking-widest text-bronze-700 uppercase font-semibold shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>CURATED 4K VISUAL ARCHIVES</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-serif font-black text-pearl-100">
+        <h1 className="text-4xl sm:text-6xl font-serif font-black text-charcoal-900">
           The Gallery of Sovereign Living
         </h1>
-        <p className="text-sm sm:text-base text-pearl-300 leading-relaxed">
+        <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           High-definition photography capturing the subtle interplay of light, Italian craftsmanship,
           and tranquil lagoon vistas at MegaMercy.
         </p>
@@ -79,8 +79,8 @@ export default function GalleryPage() {
               onClick={() => setFilter(tab.id)}
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all ${
                 filter === tab.id
-                  ? "bg-gold-500 text-obsidian-950 font-bold shadow-md shadow-gold-500/20"
-                  : "bg-obsidian-900 text-pearl-300 hover:text-white"
+                  ? "bg-bronze-500 text-white font-bold shadow-md shadow-bronze-500/20"
+                  : "bg-sand-100 text-charcoal-700 hover:bg-sand-200 hover:text-charcoal-900 border border-charcoal-900/5"
               }`}
             >
               {tab.label}
@@ -94,18 +94,18 @@ export default function GalleryPage() {
         {filtered.map((item, idx) => (
           <div
             key={idx}
-            className="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-white/10 shadow-2xl bg-obsidian-900"
+            className="group relative rounded-3xl overflow-hidden aspect-[4/3] border border-bronze-400/30 shadow-lg bg-sand-100"
           >
             <img
               src={item.url}
               alt={item.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-              <span className="text-[10px] font-mono text-gold-400 uppercase tracking-widest">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+              <span className="text-[10px] font-mono text-bronze-300 uppercase tracking-widest font-semibold">
                 {item.category}
               </span>
-              <h4 className="text-lg font-serif font-bold text-pearl-100 mt-1">{item.title}</h4>
+              <h4 className="text-lg font-serif font-bold text-white mt-1">{item.title}</h4>
             </div>
           </div>
         ))}

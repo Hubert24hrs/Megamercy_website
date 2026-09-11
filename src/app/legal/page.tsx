@@ -11,47 +11,47 @@ export default function LegalPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-24">
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-subtle text-xs font-mono tracking-widest text-gold-400 uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono tracking-widest text-bronze-700 uppercase font-semibold shadow-sm">
           <ShieldCheck className="w-3.5 h-3.5" />
           <span>GOVERNANCE &amp; DISCRETION</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-serif font-black text-pearl-100">
+        <h1 className="text-4xl sm:text-6xl font-serif font-black text-charcoal-900">
           Terms &amp; House Protocols
         </h1>
-        <p className="text-sm text-pearl-300 leading-relaxed">
+        <p className="text-sm text-charcoal-600 leading-relaxed">
           Clear standards engineered to preserve the serenity, physical fortress safety, and total
           privacy of all guests residing at MegaMercy Apartment.
         </p>
       </div>
 
       {/* Content Sections */}
-      <div className="space-y-12 text-sm text-pearl-300 leading-relaxed">
+      <div className="space-y-12 text-sm text-charcoal-600 leading-relaxed">
         {/* Section 1: House Etiquette */}
-        <div className="p-8 rounded-3xl glass-panel border border-white/5 space-y-4">
-          <h2 className="text-2xl font-serif font-bold text-pearl-100 flex items-center gap-2">
-            <span className="text-gold-400 font-mono text-base">01.</span> House Rules &amp;
+        <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-charcoal-900/10 space-y-4 shadow-sm">
+          <h2 className="text-2xl font-serif font-bold text-charcoal-900 flex items-center gap-2">
+            <span className="text-bronze-600 font-mono text-base font-semibold">01.</span> House Rules &amp;
             Etiquette
           </h2>
-          <ul className="space-y-3 text-xs sm:text-sm text-pearl-400">
+          <ul className="space-y-3 text-xs sm:text-sm text-charcoal-600">
             <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-bronze-600 shrink-0 mt-0.5" />
               <span>
-                <strong className="text-pearl-100">No Unapproved Events or Parties:</strong> To
+                <strong className="text-charcoal-900 font-semibold">No Unapproved Events or Parties:</strong> To
                 preserve acoustic serenity and building security, loud parties and unauthorized
                 gatherings are strictly prohibited.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-bronze-600 shrink-0 mt-0.5" />
               <span>
-                <strong className="text-pearl-100">Visitor Clearance Protocol:</strong> All external
+                <strong className="text-charcoal-900 font-semibold">Visitor Clearance Protocol:</strong> All external
                 visitors must be pre-registered with our concierge desk prior to estate gate entry.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-4 h-4 text-bronze-600 shrink-0 mt-0.5" />
               <span>
-                <strong className="text-pearl-100">Designated Smoking Areas:</strong> Smoking is
+                <strong className="text-charcoal-900 font-semibold">Designated Smoking Areas:</strong> Smoking is
                 strictly restricted to outdoor cantilevered terrace zones. Indoor smoke sensors are
                 calibrated to detect aerosol interference.
               </span>
@@ -60,17 +60,17 @@ export default function LegalPage() {
         </div>
 
         {/* Section 2: Cancellation & Deposit */}
-        <div className="p-8 rounded-3xl glass-panel border border-white/5 space-y-4">
-          <h2 className="text-2xl font-serif font-bold text-pearl-100 flex items-center gap-2">
-            <span className="text-gold-400 font-mono text-base">02.</span> Reservation &amp;
+        <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-charcoal-900/10 space-y-4 shadow-sm">
+          <h2 className="text-2xl font-serif font-bold text-charcoal-900 flex items-center gap-2">
+            <span className="text-bronze-600 font-mono text-base font-semibold">02.</span> Reservation &amp;
             Cancellation Policy
           </h2>
-          <p className="text-xs sm:text-sm text-pearl-400">
+          <p className="text-xs sm:text-sm text-charcoal-600">
             Full refunds are granted for cancellations submitted at least 7 days prior to scheduled
             check-in time (14:00 WAT). For cancellations within 7 days, a 50% reservation credit is
             maintained for future rescheduling within 12 months.
           </p>
-          <p className="text-xs sm:text-sm text-pearl-400">
+          <p className="text-xs sm:text-sm text-charcoal-600">
             A refundable diplomatic security deposit of $300 (or equivalent in NGN/GBP/EUR) is held
             against incidental damages and released within 24 hours of successful post-stay inventory
             inspection.
@@ -78,17 +78,17 @@ export default function LegalPage() {
         </div>
 
         {/* Section 3: NDPR & GDPR Privacy */}
-        <div className="p-8 rounded-3xl glass-panel border border-emerald-500/20 space-y-4">
-          <h2 className="text-2xl font-serif font-bold text-pearl-100 flex items-center gap-2">
-            <span className="text-emerald-400 font-mono text-base">03.</span> Nigeria Data
+        <div className="p-8 rounded-3xl glass-panel bg-white/95 border border-emerald-500/30 space-y-4 shadow-sm">
+          <h2 className="text-2xl font-serif font-bold text-charcoal-900 flex items-center gap-2">
+            <span className="text-emerald-700 font-mono text-base font-semibold">03.</span> Nigeria Data
             Protection Regulation (NDPR) &amp; GDPR
           </h2>
-          <p className="text-xs sm:text-sm text-pearl-400">
+          <p className="text-xs sm:text-sm text-charcoal-600">
             MegaMercy adheres strictly to the Nigeria Data Protection Act (NDPA) and international
             GDPR benchmarks. We gather guest identity credentials solely for statutory compliance and
             temporary biometric key generation.
           </p>
-          <p className="text-xs sm:text-sm text-pearl-400">
+          <p className="text-xs sm:text-sm text-charcoal-600">
             Your personal information is encrypted at rest using AES-256 and is never shared,
             marketed, or made available to commercial third parties. All biometric records are wiped
             automatically upon completion of your stay.

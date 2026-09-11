@@ -69,32 +69,32 @@ export default function Navbar({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-obsidian-950/85 backdrop-blur-xl border-b border-gold-500/15 py-3.5 shadow-2xl"
-          : "bg-gradient-to-b from-obsidian-950/90 via-obsidian-950/40 to-transparent py-5"
+          ? "bg-alabaster-50/92 backdrop-blur-xl border-b border-bronze-400/20 py-3.5 shadow-sm shadow-charcoal-900/5"
+          : "bg-gradient-to-b from-alabaster-50/95 via-alabaster-50/70 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo & Monogram */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 via-gold-500 to-gold-700 p-[1px] shadow-lg shadow-gold-500/20 group-hover:shadow-gold-500/40 transition-all">
-            <div className="w-full h-full bg-obsidian-950 rounded-[11px] flex items-center justify-center">
-              <span className="font-serif text-lg font-black gold-gradient-text tracking-tighter">
+          <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-bronze-300 via-bronze-500 to-bronze-700 p-[1px] shadow-sm group-hover:shadow-md transition-all">
+            <div className="w-full h-full bg-alabaster-50 rounded-[11px] flex items-center justify-center">
+              <span className="font-serif text-lg font-black text-bronze-600 tracking-tighter">
                 MM
               </span>
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-serif text-lg font-bold tracking-widest text-pearl-100 group-hover:text-gold-300 transition-colors uppercase">
+            <span className="font-serif text-lg font-bold tracking-widest text-charcoal-900 group-hover:text-bronze-600 transition-colors uppercase">
               MEGAMERCY
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-gold-400 uppercase -mt-1">
+            <span className="text-[10px] font-mono tracking-widest text-bronze-600 uppercase -mt-1 font-semibold">
               IKOYI · LAGOS
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-medium tracking-wider uppercase text-pearl-300">
+        <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-wider uppercase text-charcoal-700">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -103,13 +103,13 @@ export default function Navbar({
                 href={link.href}
                 className={`transition-colors py-1 relative ${
                   isActive
-                    ? "text-gold-400 font-semibold"
-                    : "hover:text-gold-300"
+                    ? "text-bronze-600 font-bold"
+                    : "hover:text-bronze-500"
                 }`}
               >
                 {link.label}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gold-400 rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-bronze-500 rounded-full" />
                 )}
               </Link>
             );
@@ -120,8 +120,8 @@ export default function Navbar({
         <div className="hidden sm:flex items-center gap-4">
           {/* Live Lagos Clock */}
           {lagosTime && (
-            <div className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-obsidian-900 border border-white/10 text-[11px] font-mono text-pearl-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-sand-100 border border-charcoal-900/10 text-[11px] font-mono text-charcoal-700 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>IKOYI {lagosTime} WAT</span>
             </div>
           )}
@@ -130,15 +130,15 @@ export default function Navbar({
           <div className="relative">
             <button
               onClick={() => setCurrencyDropdownOpen(!currencyDropdownOpen)}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs font-mono text-gold-300 hover:border-gold-500/40 transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-charcoal-800 hover:border-bronze-500 transition-all font-semibold"
             >
-              <Globe className="w-3.5 h-3.5" />
+              <Globe className="w-3.5 h-3.5 text-bronze-600" />
               <span>{currentCurrency}</span>
-              <ChevronDown className="w-3 h-3" />
+              <ChevronDown className="w-3 h-3 text-charcoal-500" />
             </button>
 
             {currencyDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-36 rounded-2xl bg-obsidian-900/95 backdrop-blur-xl border border-gold-500/30 shadow-2xl p-1 z-50">
+              <div className="absolute right-0 mt-2 w-36 rounded-2xl bg-white/95 backdrop-blur-xl border border-bronze-400/30 shadow-xl p-1 z-50">
                 {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
                   <button
                     key={c}
@@ -148,8 +148,8 @@ export default function Navbar({
                     }}
                     className={`w-full text-left px-3 py-2 rounded-xl text-xs font-mono flex items-center justify-between transition-colors ${
                       currentCurrency === c
-                        ? "bg-gold-500 text-obsidian-950 font-bold"
-                        : "text-pearl-300 hover:bg-obsidian-800 hover:text-white"
+                        ? "bg-bronze-500 text-white font-bold"
+                        : "text-charcoal-700 hover:bg-sand-100 hover:text-charcoal-900"
                     }`}
                   >
                     <span>{CURRENCY_CONFIG[c].label}</span>
@@ -163,7 +163,7 @@ export default function Navbar({
           {/* Primary CTA */}
           <Link
             href="/booking"
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 text-obsidian-950 text-xs font-bold uppercase tracking-wider hover:brightness-110 shadow-lg shadow-gold-500/25 transition-all flex items-center gap-2"
+            className="px-5 py-2.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-bold uppercase tracking-wider shadow-md shadow-bronze-500/20 transition-all flex items-center gap-2"
           >
             <Calendar className="w-3.5 h-3.5" />
             <span>Book Now</span>
@@ -174,7 +174,7 @@ export default function Navbar({
         <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-obsidian-900 border border-gold-500/20 text-gold-400"
+            className="p-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-charcoal-800"
             aria-label="Toggle Navigation"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -184,24 +184,24 @@ export default function Navbar({
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-obsidian-950/95 backdrop-blur-2xl border-b border-gold-500/20 p-6 shadow-2xl animate-in slide-in-from-top duration-300">
-          <nav className="flex flex-col gap-4 text-sm font-medium uppercase tracking-wider text-pearl-200">
+        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-alabaster-50/98 backdrop-blur-2xl border-b border-bronze-400/25 p-6 shadow-2xl animate-in slide-in-from-top duration-300">
+          <nav className="flex flex-col gap-4 text-sm font-medium uppercase tracking-wider text-charcoal-800">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-white/5 hover:text-gold-400 flex items-center justify-between"
+                className="py-2 border-b border-charcoal-900/5 hover:text-bronze-600 flex items-center justify-between"
               >
                 <span>{link.label}</span>
-                <span className="text-gold-500 font-mono text-xs">→</span>
+                <span className="text-bronze-500 font-mono text-xs">→</span>
               </Link>
             ))}
           </nav>
 
           {/* Currency selection on mobile */}
-          <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
-            <span className="text-xs font-mono text-pearl-400">CURRENCY</span>
+          <div className="mt-6 pt-6 border-t border-charcoal-900/10 flex items-center justify-between">
+            <span className="text-xs font-mono text-charcoal-500 font-semibold">CURRENCY</span>
             <div className="flex items-center gap-2">
               {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
                 <button
@@ -209,10 +209,10 @@ export default function Navbar({
                   onClick={() => {
                     if (onCurrencyChange) onCurrencyChange(c);
                   }}
-                  className={`px-2.5 py-1 rounded-lg text-xs font-mono ${
+                  className={`px-2.5 py-1 rounded-lg text-xs font-mono font-medium ${
                     currentCurrency === c
-                      ? "bg-gold-500 text-obsidian-950 font-bold"
-                      : "bg-obsidian-900 text-pearl-300"
+                      ? "bg-bronze-500 text-white font-bold"
+                      : "bg-sand-100 text-charcoal-700"
                   }`}
                 >
                   {c}
@@ -225,7 +225,7 @@ export default function Navbar({
             <Link
               href="/booking"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-3 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-center text-xs uppercase tracking-wider shadow-lg shadow-gold-500/20"
+              className="w-full py-3 rounded-xl bg-bronze-500 text-white font-bold text-center text-xs uppercase tracking-wider shadow-md shadow-bronze-500/20"
             >
               Reserve Residence
             </Link>
@@ -233,7 +233,7 @@ export default function Navbar({
               href={BRAND_DETAILS.socials.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-xl bg-obsidian-900 border border-gold-500/30 text-gold-400 font-medium text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-sand-100 border border-bronze-400/30 text-bronze-700 font-medium text-center text-xs uppercase tracking-wider flex items-center justify-center gap-2"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>WhatsApp VIP Butler</span>

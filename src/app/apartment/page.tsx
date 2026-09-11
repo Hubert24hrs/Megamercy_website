@@ -16,14 +16,14 @@ export default function ApartmentPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 pb-24">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-subtle text-xs font-mono tracking-widest text-gold-400 uppercase">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono tracking-widest text-bronze-700 uppercase font-semibold shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>SPATIAL DESIGN &amp; SPECIFICATIONS</span>
         </div>
-        <h1 className="text-4xl sm:text-6xl font-serif font-black text-pearl-100">
+        <h1 className="text-4xl sm:text-6xl font-serif font-black text-charcoal-900">
           The Residence Unfolded
         </h1>
-        <p className="text-sm sm:text-base text-pearl-300 leading-relaxed">
+        <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           3,400 square feet of curated modernist luxury. Three master en-suite retreats, an
           acoustic living pavilion, private chef's culinary suite, and an expansive cantilevered
           terrace overlooking the Lagos Lagoon.
@@ -43,10 +43,10 @@ export default function ApartmentPage() {
       {/* Deep Room Breakdown Cards */}
       <section className="space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <span className="text-xs font-mono text-gold-400 uppercase tracking-widest block">
+          <span className="text-xs font-mono text-bronze-600 uppercase tracking-widest block font-semibold">
             SUITE BY SUITE
           </span>
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-pearl-100">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-charcoal-900">
             Engineered for Serenity &amp; Rest
           </h2>
         </div>
@@ -59,39 +59,39 @@ export default function ApartmentPage() {
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
               }`}
             >
-              <div className="rounded-3xl overflow-hidden aspect-[16/10] border border-gold-500/20 shadow-2xl relative group">
+              <div className="rounded-3xl overflow-hidden aspect-[16/10] border border-bronze-400/30 shadow-xl relative group">
                 <img
                   src={room.imageUrl}
                   alt={room.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute top-4 left-4 px-3 py-1 rounded-full glass-panel text-[11px] font-mono text-gold-400">
+                <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/95 border border-bronze-400/30 text-[11px] font-mono text-bronze-700 font-semibold shadow-md">
                   {room.dimensions}
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div>
-                  <span className="text-xs font-mono text-gold-400 uppercase tracking-widest block">
+                  <span className="text-xs font-mono text-bronze-600 uppercase tracking-widest block font-semibold">
                     {room.capacity}
                   </span>
-                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-pearl-100 mt-1">
+                  <h3 className="text-2xl sm:text-3xl font-serif font-bold text-charcoal-900 mt-1">
                     {room.name}
                   </h3>
-                  <p className="text-xs font-mono text-pearl-400 mt-1">{room.subtitle}</p>
+                  <p className="text-xs font-mono text-charcoal-500 mt-1">{room.subtitle}</p>
                 </div>
 
-                <p className="text-xs sm:text-sm text-pearl-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
                   {room.description}
                 </p>
 
-                <div className="space-y-2 pt-2 border-t border-white/10">
-                  <span className="text-[11px] font-mono text-pearl-400 uppercase block">
+                <div className="space-y-2 pt-2 border-t border-charcoal-900/10">
+                  <span className="text-[11px] font-mono text-charcoal-500 uppercase block font-semibold">
                     DISTINCTIVE FEATURES
                   </span>
                   {room.keyFeatures.map((feat, fidx) => (
-                    <div key={fidx} className="flex items-center gap-2 text-xs text-pearl-200">
-                      <CheckCircle2 className="w-4 h-4 text-gold-400 shrink-0" />
+                    <div key={fidx} className="flex items-center gap-2 text-xs text-charcoal-700">
+                      <CheckCircle2 className="w-4 h-4 text-bronze-600 shrink-0" />
                       <span>{feat}</span>
                     </div>
                   ))}
@@ -100,7 +100,7 @@ export default function ApartmentPage() {
                 <div className="pt-2">
                   <a
                     href="/booking"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gold-500 text-obsidian-950 font-bold text-xs uppercase tracking-wider hover:bg-gold-400 transition-colors shadow-lg shadow-gold-500/20"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-bronze-500 text-white font-bold text-xs uppercase tracking-wider hover:bg-bronze-600 transition-colors shadow-md shadow-bronze-500/20"
                   >
                     <span>Reserve Residence</span>
                     <ChevronRight className="w-4 h-4" />

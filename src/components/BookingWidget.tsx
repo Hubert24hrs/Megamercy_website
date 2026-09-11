@@ -83,34 +83,34 @@ export default function BookingWidget({
   };
 
   return (
-    <div className="w-full rounded-3xl glass-panel p-6 lg:p-8 border border-gold-500/25 shadow-2xl relative overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
+    <div className="w-full rounded-3xl glass-panel p-6 lg:p-8 border border-bronze-400/30 shadow-xl relative overflow-hidden bg-white/95">
+      {/* Ambient background soft glow */}
+      <div className="absolute top-0 right-0 w-72 h-72 bg-bronze-400/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header with Currency Selector */}
-      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-white/10">
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-charcoal-900/10">
         <div>
-          <span className="text-xs font-mono text-gold-400 uppercase tracking-widest block">
+          <span className="text-xs font-mono text-bronze-600 uppercase tracking-widest block font-semibold">
             GUARANTEED AVAILABILITY ENGINE
           </span>
           <div className="flex items-baseline gap-2 mt-1">
-            <span className="text-3xl lg:text-4xl font-serif font-bold gold-gradient-text">
+            <span className="text-3xl lg:text-4xl font-serif font-bold text-charcoal-900">
               {formatPrice(BASE_NIGHTLY_RATE_USD, currency)}
             </span>
-            <span className="text-xs text-pearl-400 font-mono">/ NIGHT</span>
+            <span className="text-xs text-charcoal-500 font-mono">/ NIGHT</span>
           </div>
         </div>
 
         {/* Currency Switcher Buttons */}
-        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-obsidian-900 border border-white/10">
+        <div className="flex items-center gap-1.5 p-1 rounded-xl bg-sand-100 border border-charcoal-900/10">
           {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
             <button
               key={c}
               onClick={() => setCurrency(c)}
               className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
                 currency === c
-                  ? "bg-gold-500 text-obsidian-950 font-bold shadow-md shadow-gold-500/20"
-                  : "text-pearl-300 hover:text-white hover:bg-white/5"
+                  ? "bg-bronze-500 text-white font-bold shadow-sm"
+                  : "text-charcoal-700 hover:text-charcoal-900 hover:bg-white/60"
               }`}
             >
               {c}
@@ -121,20 +121,20 @@ export default function BookingWidget({
 
       {bookingConfirmed ? (
         <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in duration-300">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 mx-auto flex items-center justify-center">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 mx-auto flex items-center justify-center">
             <Check className="w-8 h-8" />
           </div>
-          <h3 className="text-2xl font-serif font-bold text-pearl-100">
+          <h3 className="text-2xl font-serif font-bold text-charcoal-900">
             Reservation Request Transmitted
           </h3>
-          <p className="text-xs text-pearl-300 max-w-md mx-auto leading-relaxed">
+          <p className="text-xs text-charcoal-600 max-w-md mx-auto leading-relaxed">
             Your dates ({checkInDate} to {checkOutDate}) for {guests} guests have been locked in our
             registry. Our lead butler will connect with you via WhatsApp or Email within 5 minutes to
             finalize identity verification and payment tokens.
           </p>
           <button
             onClick={() => setBookingConfirmed(false)}
-            className="px-6 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs font-mono text-gold-400 hover:bg-obsidian-800 transition-colors"
+            className="px-6 py-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-charcoal-800 hover:bg-sand-200 transition-colors"
           >
             Modify Reservation Details
           </button>
@@ -144,53 +144,53 @@ export default function BookingWidget({
         <div className="space-y-6 mt-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Check-In */}
-            <div className="p-3.5 rounded-2xl bg-obsidian-900/80 border border-white/10 focus-within:border-gold-500/50 transition-colors">
-              <label className="text-[11px] font-mono text-pearl-400 flex items-center gap-1.5 mb-1">
-                <Calendar className="w-3.5 h-3.5 text-gold-400" />
+            <div className="p-3.5 rounded-2xl bg-alabaster-50 border border-charcoal-900/15 focus-within:border-bronze-500 focus-within:bg-white transition-colors">
+              <label className="text-[11px] font-mono text-charcoal-600 flex items-center gap-1.5 mb-1 font-semibold">
+                <Calendar className="w-3.5 h-3.5 text-bronze-600" />
                 <span>CHECK-IN DATE</span>
               </label>
               <input
                 type="date"
                 value={checkInDate}
                 onChange={(e) => setCheckInDate(e.target.value)}
-                className="w-full bg-transparent text-sm font-medium text-pearl-100 focus:outline-none"
+                className="w-full bg-transparent text-sm font-medium text-charcoal-900 focus:outline-none"
               />
             </div>
 
             {/* Check-Out */}
-            <div className="p-3.5 rounded-2xl bg-obsidian-900/80 border border-white/10 focus-within:border-gold-500/50 transition-colors">
-              <label className="text-[11px] font-mono text-pearl-400 flex items-center gap-1.5 mb-1">
-                <Calendar className="w-3.5 h-3.5 text-gold-400" />
+            <div className="p-3.5 rounded-2xl bg-alabaster-50 border border-charcoal-900/15 focus-within:border-bronze-500 focus-within:bg-white transition-colors">
+              <label className="text-[11px] font-mono text-charcoal-600 flex items-center gap-1.5 mb-1 font-semibold">
+                <Calendar className="w-3.5 h-3.5 text-bronze-600" />
                 <span>CHECK-OUT DATE</span>
               </label>
               <input
                 type="date"
                 value={checkOutDate}
                 onChange={(e) => setCheckOutDate(e.target.value)}
-                className="w-full bg-transparent text-sm font-medium text-pearl-100 focus:outline-none"
+                className="w-full bg-transparent text-sm font-medium text-charcoal-900 focus:outline-none"
               />
             </div>
           </div>
 
           {/* Guests Selector */}
-          <div className="p-3.5 rounded-2xl bg-obsidian-900/80 border border-white/10 flex items-center justify-between">
-            <div className="flex items-center gap-2 text-[11px] font-mono text-pearl-400">
-              <Users className="w-4 h-4 text-gold-400" />
+          <div className="p-3.5 rounded-2xl bg-alabaster-50 border border-charcoal-900/15 flex items-center justify-between">
+            <div className="flex items-center gap-2 text-[11px] font-mono text-charcoal-600 font-semibold">
+              <Users className="w-4 h-4 text-bronze-600" />
               <span>GUESTS</span>
             </div>
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setGuests(Math.max(1, guests - 1))}
-                className="w-7 h-7 rounded-lg bg-obsidian-800 text-pearl-200 hover:bg-obsidian-700 flex items-center justify-center font-bold text-sm"
+                className="w-7 h-7 rounded-lg bg-sand-200 text-charcoal-800 hover:bg-sand-300 flex items-center justify-center font-bold text-sm"
               >
                 -
               </button>
-              <span className="text-sm font-bold text-pearl-100 w-12 text-center">
+              <span className="text-sm font-bold text-charcoal-900 w-12 text-center">
                 {guests} {guests === 1 ? "Guest" : "Guests"}
               </span>
               <button
                 onClick={() => setGuests(Math.min(6, guests + 1))}
-                className="w-7 h-7 rounded-lg bg-obsidian-800 text-pearl-200 hover:bg-obsidian-700 flex items-center justify-center font-bold text-sm"
+                className="w-7 h-7 rounded-lg bg-sand-200 text-charcoal-800 hover:bg-sand-300 flex items-center justify-center font-bold text-sm"
               >
                 +
               </button>
@@ -199,7 +199,7 @@ export default function BookingWidget({
 
           {/* Optional Curated VIP Add-ons */}
           <div className="space-y-3 pt-2">
-            <span className="text-xs font-mono text-gold-400 uppercase tracking-wider block">
+            <span className="text-xs font-mono text-bronze-600 uppercase tracking-wider block font-semibold">
               CURATED STAY UPGRADES
             </span>
             <div className="space-y-2">
@@ -210,29 +210,29 @@ export default function BookingWidget({
                   <div
                     key={addon.id}
                     onClick={() => toggleAddon(addon.id)}
-                    className={`p-3 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                    className={`p-3.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
                       isSelected
-                        ? "bg-gold-500/10 border-gold-500/40"
-                        : "bg-obsidian-900/50 border-white/5 hover:border-white/15"
+                        ? "bg-bronze-400/10 border-bronze-500/60 shadow-sm"
+                        : "bg-alabaster-50/80 border-charcoal-900/10 hover:border-bronze-400/40"
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div
                         className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
                           isSelected
-                            ? "bg-gold-500 text-obsidian-950"
-                            : "bg-obsidian-800 text-pearl-300"
+                            ? "bg-bronze-500 text-white shadow-sm"
+                            : "bg-sand-200 text-charcoal-700"
                         }`}
                       >
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <div>
-                        <h5 className="text-xs font-bold text-pearl-100">{addon.title}</h5>
-                        <p className="text-[11px] text-pearl-400">{addon.desc}</p>
+                        <h5 className="text-xs font-bold text-charcoal-900">{addon.title}</h5>
+                        <p className="text-[11px] text-charcoal-600">{addon.desc}</p>
                       </div>
                     </div>
                     <div className="text-right shrink-0 ml-3">
-                      <span className="text-xs font-mono font-bold text-gold-300 block">
+                      <span className="text-xs font-mono font-bold text-bronze-700 block">
                         +{formatPrice(addon.costUSD, currency)}
                       </span>
                     </div>
@@ -243,40 +243,40 @@ export default function BookingWidget({
           </div>
 
           {/* Pricing Breakdown */}
-          <div className="p-4 rounded-2xl bg-obsidian-900/90 border border-white/5 space-y-2 text-xs">
-            <div className="flex justify-between text-pearl-400">
+          <div className="p-4 rounded-2xl bg-sand-50 border border-charcoal-900/10 space-y-2 text-xs">
+            <div className="flex justify-between text-charcoal-600">
               <span>
                 {formatPrice(BASE_NIGHTLY_RATE_USD, currency)} × {nights}{" "}
                 {nights === 1 ? "night" : "nights"}
               </span>
-              <span className="font-mono text-pearl-200">
+              <span className="font-mono text-charcoal-900 font-semibold">
                 {formatPrice(basePriceUSD, currency)}
               </span>
             </div>
 
             {addonsTotalUSD > 0 && (
-              <div className="flex justify-between text-pearl-400">
+              <div className="flex justify-between text-charcoal-600">
                 <span>Selected VIP Add-ons</span>
-                <span className="font-mono text-gold-300">
+                <span className="font-mono text-bronze-700 font-bold">
                   +{formatPrice(addonsTotalUSD, currency)}
                 </span>
               </div>
             )}
 
-            <div className="flex justify-between text-pearl-400">
+            <div className="flex justify-between text-charcoal-600">
               <span>Refundable Diplomatic Security Deposit</span>
-              <span className="font-mono text-pearl-200">
+              <span className="font-mono text-charcoal-900 font-semibold">
                 {formatPrice(securityDepositUSD, currency)}
               </span>
             </div>
 
-            <div className="pt-2 border-t border-white/10 flex justify-between items-baseline">
-              <span className="text-sm font-bold text-pearl-100">Estimated Total</span>
+            <div className="pt-2.5 border-t border-charcoal-900/10 flex justify-between items-baseline">
+              <span className="text-sm font-bold text-charcoal-900">Estimated Total</span>
               <div className="text-right">
-                <span className="text-xl lg:text-2xl font-serif font-black gold-gradient-text">
+                <span className="text-xl lg:text-2xl font-serif font-black text-charcoal-900">
                   {formatPrice(grandTotalUSD + securityDepositUSD, currency)}
                 </span>
-                <span className="block text-[10px] font-mono text-pearl-400">
+                <span className="block text-[10px] font-mono text-charcoal-500 font-medium">
                   INCL. TAXES &amp; DIPLOMATIC CLEANSING
                 </span>
               </div>
@@ -287,7 +287,7 @@ export default function BookingWidget({
           <div className="space-y-3 pt-2">
             <button
               onClick={handleInstantReserve}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-gold-500 via-gold-400 to-gold-500 text-obsidian-950 font-serif font-black text-sm uppercase tracking-wider hover:brightness-110 shadow-xl shadow-gold-500/25 transition-all flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-2xl bg-bronze-500 hover:bg-bronze-600 text-white font-serif font-bold text-sm uppercase tracking-wider shadow-lg shadow-bronze-500/25 transition-all flex items-center justify-center gap-2"
             >
               <CreditCard className="w-4 h-4" />
               <span>Instant Reserve &amp; Secure Dates</span>
@@ -297,20 +297,20 @@ export default function BookingWidget({
               href={`https://wa.me/2348140007890?text=Hello%20MegaMercy%2C%20I%20am%20interested%20in%20booking%20from%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights)%20for%20${guests}%20guests.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-2xl bg-obsidian-900 border border-gold-500/25 hover:border-gold-500/50 text-gold-300 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-2xl bg-white border border-bronze-400/40 hover:border-bronze-500 text-charcoal-800 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
             >
               <span>Or Inquire Direct with Host Butler (WhatsApp)</span>
             </a>
           </div>
 
           {/* Peace of Mind Guarantee */}
-          <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] text-pearl-400">
+          <div className="grid grid-cols-2 gap-2 pt-2 text-[11px] text-charcoal-600">
             <div className="flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>Free cancellation up to 7 days</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5 text-gold-400" />
+              <Clock className="w-3.5 h-3.5 text-bronze-600" />
               <span>Instant access code on arrival</span>
             </div>
           </div>

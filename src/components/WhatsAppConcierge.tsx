@@ -38,27 +38,27 @@ export default function WhatsAppConcierge() {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
       {/* Expanded Concierge Drawer */}
       {isOpen && (
-        <div className="mb-4 w-84 sm:w-96 rounded-3xl glass-panel border border-gold-500/30 p-5 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-bottom-5 duration-300">
+        <div className="mb-4 w-84 sm:w-96 rounded-3xl glass-panel bg-white/95 border border-bronze-400/30 p-5 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-bottom-5 duration-300">
           {/* Header */}
-          <div className="flex items-center justify-between pb-3 border-b border-white/10">
+          <div className="flex items-center justify-between pb-3 border-b border-charcoal-900/10">
             <div className="flex items-center gap-3">
-              <div className="relative w-9 h-9 rounded-xl bg-gold-500/20 border border-gold-400/40 flex items-center justify-center text-gold-400">
+              <div className="relative w-9 h-9 rounded-xl bg-bronze-500/10 border border-bronze-400/40 flex items-center justify-center text-bronze-600">
                 <Sparkles className="w-4 h-4" />
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-obsidian-950 animate-pulse" />
+                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
               </div>
               <div>
-                <h4 className="text-xs font-serif font-bold text-pearl-100">
+                <h4 className="text-xs font-serif font-bold text-charcoal-900">
                   MEGAMERCY VIP BUTLER
                 </h4>
-                <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-700 font-semibold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   <span>ONLINE · TYPICAL REPLY &lt; 3 MINS</span>
                 </div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-1 rounded-lg text-pearl-400 hover:text-white hover:bg-white/5 transition-colors"
+              className="p-1 rounded-lg text-charcoal-500 hover:text-charcoal-900 hover:bg-sand-100 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -66,7 +66,7 @@ export default function WhatsAppConcierge() {
 
           {/* Body */}
           <div className="py-4 space-y-3">
-            <p className="text-xs text-pearl-300 leading-relaxed">
+            <p className="text-xs text-charcoal-600 leading-relaxed">
               Welcome. How may our private concierge team assist your travel plans to Ikoyi today?
             </p>
 
@@ -75,10 +75,10 @@ export default function WhatsAppConcierge() {
                 <button
                   key={idx}
                   onClick={() => handleOpenWhatsApp(p.text)}
-                  className="w-full text-left p-2.5 rounded-xl bg-obsidian-900/80 hover:bg-obsidian-800 border border-white/5 hover:border-gold-500/30 text-xs text-pearl-200 transition-all flex items-center justify-between group"
+                  className="w-full text-left p-2.5 rounded-xl bg-sand-50 hover:bg-sand-100 border border-charcoal-900/10 hover:border-bronze-400/40 text-xs text-charcoal-800 transition-all flex items-center justify-between group shadow-sm"
                 >
                   <span>{p.title}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-gold-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                  <ChevronRight className="w-3.5 h-3.5 text-bronze-600 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
                 </button>
               ))}
             </div>
@@ -87,7 +87,7 @@ export default function WhatsAppConcierge() {
           {/* Footer CTA */}
           <button
             onClick={() => handleOpenWhatsApp()}
-            className="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-obsidian-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg shadow-emerald-500/20"
+            className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-600/20"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Open WhatsApp Chat</span>
@@ -98,16 +98,16 @@ export default function WhatsAppConcierge() {
       {/* Floating Trigger Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-gradient-to-r from-obsidian-900 via-obsidian-850 to-obsidian-900 border border-gold-500/30 hover:border-gold-500 shadow-2xl hover:shadow-gold-500/20 transition-all duration-300"
+        className="group relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-white/95 border border-bronze-400/40 hover:border-bronze-500 shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-md"
       >
         <span className="relative flex h-3 w-3">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
         </span>
-        <div className="w-7 h-7 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+        <div className="w-7 h-7 rounded-full bg-bronze-500/15 text-bronze-700 flex items-center justify-center group-hover:scale-110 transition-transform">
           <MessageCircle className="w-4 h-4" />
         </div>
-        <span className="text-xs font-mono font-medium text-pearl-100 tracking-wider hidden sm:inline">
+        <span className="text-xs font-mono font-semibold text-charcoal-900 tracking-wider hidden sm:inline">
           VIP CONCIERGE
         </span>
       </button>
