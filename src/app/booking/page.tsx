@@ -3,9 +3,9 @@ import BookingWidget from "@/components/BookingWidget";
 import { ShieldCheck, Calendar, CreditCard, Sparkles, Clock, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Reserve Residence & Live Rates · MegaMercy Apartment Ikoyi",
+  title: "Reserve Residence & Live Rates · MagMercy Apartment Ikoyi",
   description:
-    "Check real-time availability, multi-currency rates (NGN, USD, GBP, EUR), and secure instant reservations for MegaMercy Apartment in Ikoyi, Lagos.",
+    "Check real-time availability, multi-currency rates (NGN, USD, GBP, EUR), and secure instant reservations for MagMercy Apartment in Ikoyi, Lagos.",
 };
 
 export default function BookingPage() {

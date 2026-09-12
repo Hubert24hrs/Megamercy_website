@@ -321,7 +321,7 @@ export default function Footer() {
             <Link href="/legal" className="hover:text-white transition-colors">
               House Rules
             </Link>
-            <span>© {new Date().getFullYear()} MegaMercy Apartment. All Rights Reserved.</span>
+            <span>© {new Date().getFullYear()} MagMercy Apartment. All Rights Reserved.</span>
           </div>
         </div>
       </div>

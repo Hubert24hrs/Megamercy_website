@@ -6,9 +6,9 @@ import { ROOMS } from "@/lib/data";
 import { Sparkles, Maximize2, ShieldCheck, CheckCircle2, ChevronRight, Eye } from "lucide-react";
 
 export const metadata = {
-  title: "The Apartment & 3D Tour · MegaMercy Ikoyi, Lagos",
+  title: "The Apartment & 3D Tour · MagMercy Ikoyi, Lagos",
   description:
-    "Explore the 3,400 sq.ft penthouse layout, room-by-room architectural specifications, and interactive 3D virtual walkthrough of MegaMercy Apartment.",
+    "Explore the 3,400 sq.ft penthouse layout, room-by-room architectural specifications, and interactive 3D virtual walkthrough of MagMercy Apartment.",
 };
 
 export default function ApartmentPage() {

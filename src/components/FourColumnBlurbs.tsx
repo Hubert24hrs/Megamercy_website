@@ -98,18 +98,18 @@ export default function FourColumnBlurbs() {
           </div>
         </div>
 
-        {/* Column 4: #MegaMercyIkoyi Living */}
+        {/* Column 4: #MagMercyIkoyi Living */}
         <div className="p-7 rounded-3xl bg-white border border-charcoal-900/15 shadow-lg flex flex-col justify-between hover:border-coastal-blue transition-all group">
           <div>
             <div className="w-12 h-12 rounded-2xl bg-coastal-teal/15 border border-coastal-teal/40 text-coastal-blue flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
               <Instagram className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-serif font-black text-charcoal-900 mb-2">
-              #MegaMercyIkoyi
+              #MagMercyIkoyi
             </h3>
             <p className="text-xs text-charcoal-600 leading-relaxed">
               Capture your morning espresso overlooking the lagoon or an evening on the terrace. Follow
-              our verified residency gallery and tag #MegaMercyIkoyi.
+              our verified residency gallery and tag #MagMercyIkoyi.
             </p>
           </div>
           <div className="pt-6">

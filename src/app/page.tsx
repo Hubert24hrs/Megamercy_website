@@ -48,7 +48,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-base sm:text-lg text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
-            Overlooking the tranquil waters of Five Cowries Creek, MegaMercy is an exclusive, privately held
+            Overlooking the tranquil waters of Five Cowries Creek, MagMercy is an exclusive, privately held
             waterfront sanctuary in old Ikoyi. Finished 3.2-meter ceilings and German acoustic glazing seal out
             the city hum, backed by synchronized 150kVA power, heated infinity pool, private boat jetty,
             and an on-site armed police detail.
@@ -124,7 +124,7 @@ export default function HomePage() {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-mono text-bronze-600 uppercase tracking-widest font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>THE MEGAMERCY STANDARD</span>
+              <span>THE MAGMERCY STANDARD</span>
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-serif font-black text-charcoal-900 leading-tight">
@@ -133,7 +133,7 @@ export default function HomePage() {
 
             <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
               In a metropolis as dynamic and pulsating as Lagos, true luxury is the rare luxury of
-              serene quiet, total confidentiality, and effortless continuity. MegaMercy was
+              serene quiet, total confidentiality, and effortless continuity. MagMercy was
               conceived from the ground up for dignitaries, multinational founders, and discerning
               families who refuse compromise.
             </p>
@@ -180,7 +180,7 @@ export default function HomePage() {
             <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-charcoal-900/15 shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-                alt="MegaMercy Living Pavilion"
+                alt="MagMercy Living Pavilion"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -283,7 +283,7 @@ export default function HomePage() {
                 At the Center of Lagos's Diplomatic &amp; Financial Power
               </h2>
               <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-                Positioned along the prestigious Bourdillon corridor, MegaMercy provides direct,
+                Positioned along the prestigious Bourdillon corridor, MagMercy provides direct,
                 controlled access to foreign embassies, private financial institutions, and established
                 dining on Lugard and Alexander avenues.
               </p>
@@ -359,7 +359,7 @@ export default function HomePage() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-serif font-bold text-charcoal-900 max-w-2xl mx-auto leading-tight">
-            Reserve Your Enclave at MegaMercy Apartment
+            Reserve Your Enclave at MagMercy Apartment
           </h2>
 
           <p className="text-sm text-charcoal-600 max-w-xl mx-auto leading-relaxed">

@@ -86,7 +86,7 @@ export default function Navbar({
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-lg font-bold tracking-widest text-charcoal-900 group-hover:text-bronze-600 transition-colors uppercase">
-              MEGAMERCY
+              MAGMERCY
             </span>
             <span className="text-[10px] font-mono tracking-widest text-bronze-600 uppercase -mt-1 font-semibold">
               IKOYI · LAGOS

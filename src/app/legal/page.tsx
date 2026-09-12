@@ -2,7 +2,7 @@ import React from "react";
 import { ShieldCheck, FileText, Lock, CheckCircle2 } from "lucide-react";
 
 export const metadata = {
-  title: "Legal, House Rules & NDPR Privacy · MegaMercy Ikoyi",
+  title: "Legal, House Rules & NDPR Privacy · MagMercy Ikoyi",
   description:
     "Review our terms of stay, house rules, diplomatic confidentiality agreement, and Nigeria Data Protection Regulation (NDPR) policies.",
 };
@@ -20,7 +20,7 @@ export default function LegalPage() {
         </h1>
         <p className="text-sm text-charcoal-600 leading-relaxed">
           Clear standards engineered to preserve the serenity, physical fortress safety, and total
-          privacy of all guests residing at MegaMercy Apartment.
+          privacy of all guests residing at MagMercy Apartment.
         </p>
       </div>
 
@@ -84,7 +84,7 @@ export default function LegalPage() {
             Protection Regulation (NDPR) &amp; GDPR
           </h2>
           <p className="text-xs sm:text-sm text-charcoal-600">
-            MegaMercy adheres strictly to the Nigeria Data Protection Act (NDPA) and international
+            MagMercy adheres strictly to the Nigeria Data Protection Act (NDPA) and international
             GDPR benchmarks. We gather guest identity credentials solely for statutory compliance and
             temporary biometric key generation.
           </p>

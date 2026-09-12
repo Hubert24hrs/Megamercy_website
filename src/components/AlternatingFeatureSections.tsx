@@ -24,7 +24,7 @@ export default function AlternatingFeatureSections() {
           <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-sand-100">
             <img
               src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
-              alt="MegaMercy Heated Pool and Waterfront Deck in Ikoyi"
+              alt="MagMercy Heated Pool and Waterfront Deck in Ikoyi"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
           </div>
@@ -119,7 +119,7 @@ export default function AlternatingFeatureSections() {
           </p>
 
           <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-            Stay in one of MegaMercy's fully furnished residences featuring custom Italian millwork,
+            Stay in one of MagMercy's fully furnished residences featuring custom Italian millwork,
             complete Miele chef kitchens, expansive dining and living areas, and expansive private
             teak balconies offering panoramic water vistas.
           </p>
@@ -166,7 +166,7 @@ export default function AlternatingFeatureSections() {
           <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-sand-100">
             <img
               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-              alt="MegaMercy Luxury Living Room and Private Balcony"
+              alt="MagMercy Luxury Living Room and Private Balcony"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
           </div>

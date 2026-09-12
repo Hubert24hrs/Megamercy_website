@@ -3,9 +3,9 @@ import { IKOYI_LANDMARKS } from "@/lib/data";
 import { MapPin, Navigation, Car, Plane, Compass, Sparkles, ChevronRight } from "lucide-react";
 
 export const metadata = {
-  title: "Ikoyi Neighborhood & Location · MegaMercy Lagos",
+  title: "Ikoyi Neighborhood & Location · MagMercy Lagos",
   description:
-    "Explore the prestigious Ikoyi enclave surrounding MegaMercy Apartment. Discover nearby diplomatic consulates, fine dining, golf clubs, and transit times.",
+    "Explore the prestigious Ikoyi enclave surrounding MagMercy Apartment. Discover nearby diplomatic consulates, fine dining, golf clubs, and transit times.",
 };
 
 export default function LocationPage() {

@@ -1,21 +1,21 @@
 import { AmenityItem, RoomSpec, SecurityFeature, Testimonial } from "./types";
 
 export const BRAND_DETAILS = {
-  name: "MegaMercy Apartment",
+  name: "MagMercy Apartment",
   tagline: "The Sanctuary of Modern Sovereignty",
   subtagline: "Ultra-Premium, Futuristic Short-Let Penthouse in Ikoyi, Lagos",
   location: "Bourdillon Road, Ikoyi, Lagos, Nigeria",
   shortLocation: "Ikoyi, Lagos",
   phone: "+234 814 000 7890",
   whatsapp: "+2348140007890",
-  email: "concierge@megamercy.com",
+  email: "concierge@magmercy.com",
   socials: {
-    instagram: "https://instagram.com/megamercyapartment",
-    facebook: "https://facebook.com/megamercyapartment",
-    tiktok: "https://tiktok.com/@megamercyapartment",
-    twitter: "https://x.com/megamercylagos",
-    whatsapp: "https://wa.me/2348140007890?text=Hello%20MegaMercy%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20reserving%20the%20penthouse.",
-    youtube: "https://youtube.com/@megamercyapartment",
+    instagram: "https://instagram.com/magmercyapartment",
+    facebook: "https://facebook.com/magmercyapartment",
+    tiktok: "https://tiktok.com/@magmercyapartment",
+    twitter: "https://x.com/magmercylagos",
+    whatsapp: "https://wa.me/2348140007890?text=Hello%20MagMercy%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20reserving%20the%20penthouse.",
+    youtube: "https://youtube.com/@magmercyapartment",
   },
 };
 

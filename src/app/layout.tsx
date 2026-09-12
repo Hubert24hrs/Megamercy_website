@@ -5,11 +5,11 @@ import Footer from "@/components/Footer";
 import WhatsAppConcierge from "@/components/WhatsAppConcierge";
 
 export const metadata: Metadata = {
-  title: "MegaMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",
+  title: "MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",
   description:
     "Ultra-premium, futuristic short-let apartment in prime Ikoyi, Lagos. 3,400 sq.ft of curated modernist luxury, panoramic Lagos Lagoon views, and 24/7 diplomatic fortress security.",
   keywords: [
-    "MegaMercy Apartment",
+    "MagMercy Apartment",
     "Luxury short let Lagos",
     "Ikoyi penthouse short let",
     "Diplomatic apartment Lagos",
@@ -17,19 +17,19 @@ export const metadata: Metadata = {
     "3D virtual tour Lagos apartment",
     "Secure short let Nigeria",
   ],
-  authors: [{ name: "MegaMercy Hospitality" }],
+  authors: [{ name: "MagMercy Hospitality" }],
   openGraph: {
-    title: "MegaMercy Apartment · The Sanctuary of Modern Sovereignty",
+    title: "MagMercy Apartment · The Sanctuary of Modern Sovereignty",
     description:
       "Ultra-premium, futuristic short-let apartment in Ikoyi, Lagos. 24/7 uninterrupted power, biometric security, and dedicated private butler.",
-    url: "https://megamercyapartment.com",
-    siteName: "MegaMercy Apartment",
+    url: "https://magmercyapartment.com",
+    siteName: "MagMercy Apartment",
     images: [
       {
         url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
         width: 1200,
         height: 630,
-        alt: "MegaMercy Luxury Penthouse Ikoyi Lagos",
+        alt: "MagMercy Luxury Penthouse Ikoyi Lagos",
       },
     ],
     locale: "en_US",
@@ -46,7 +46,7 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    name: "MegaMercy Apartment",
+    name: "MagMercy Apartment",
     description:
       "Ultra-premium futuristic short-let apartment in Ikoyi, Lagos, Nigeria offering diplomatic security and panoramic lagoon views.",
     address: {

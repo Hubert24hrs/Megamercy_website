@@ -2,8 +2,8 @@ import { Hero09 } from "@/components/ui/hero-09";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hero 09 Component | MegaMercy Apartment",
-  description: "Bespoke executive hero component for MegaMercy Apartment.",
+  title: "Hero 09 Component | MagMercy Apartment",
+  description: "Bespoke executive hero component for MagMercy Apartment.",
 };
 
 export default function HeroDemoPage() {
@@ -16,7 +16,7 @@ export default function HeroDemoPage() {
         searchPlaceholder="Search suites, amenities, or security protocols..."
         searchButtonText="Explore"
         heroImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-        heroAlt="MegaMercy Residence Architecture"
+        heroAlt="MagMercy Residence Architecture"
         bottomTitle="Engineered for"
         bottomTitleLine2="absolute peace."
         bottomText="Triple-redundant power, German acoustic glazing, and 24/7 dedicated butler service on Bourdillon Road."

@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Diplomatic Security & Privacy · MegaMercy Apartment Ikoyi",
+  title: "Diplomatic Security & Privacy · MagMercy Apartment Ikoyi",
   description:
-    "Comprehensive physical and digital security architecture at MegaMercy Apartment. Biometric locks, 24/7 armed perimeter patrol, and NDPR/GDPR guest confidentiality.",
+    "Comprehensive physical and digital security architecture at MagMercy Apartment. Biometric locks, 24/7 armed perimeter patrol, and NDPR/GDPR guest confidentiality.",
 };
 
 export default function SecurityPage() {
@@ -34,7 +34,7 @@ export default function SecurityPage() {
         </h1>
         <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           In an interconnected world, your physical safety and digital discretion are inseparable.
-          MegaMercy operates with military-grade rigor, allowing you to conduct diplomacy and
+          MagMercy operates with military-grade rigor, allowing you to conduct diplomacy and
           business with total peace of mind.
         </p>
       </div>

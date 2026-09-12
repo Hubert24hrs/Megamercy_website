@@ -176,7 +176,7 @@ export default function InteractiveUnitMap() {
           Select Your Residence by Floor &amp; Water View
         </h2>
         <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed max-w-2xl mx-auto">
-          Explore the elevation of MegaMercy Apartment overlooking Five Cowries Creek. Click any suite
+          Explore the elevation of MagMercy Apartment overlooking Five Cowries Creek. Click any suite
           on the floor map to preview dimensions, orientation, and real-time reservation options.
         </p>
       </div>

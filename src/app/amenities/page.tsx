@@ -15,9 +15,9 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Amenities & Smart Living · MegaMercy Apartment Ikoyi",
+  title: "Amenities & Smart Living · MagMercy Apartment Ikoyi",
   description:
-    "Explore the ultra-luxury amenities, triple-redundant power grid, Lutron smart lighting, and 24/7 dedicated butler service at MegaMercy Apartment.",
+    "Explore the ultra-luxury amenities, triple-redundant power grid, Lutron smart lighting, and 24/7 dedicated butler service at MagMercy Apartment.",
 };
 
 export default function AmenitiesPage() {
@@ -34,7 +34,7 @@ export default function AmenitiesPage() {
         </h1>
         <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           From uninterrupted clean power to a private rooftop infinity pool and personalized butler
-          service, MegaMercy provides an ecosystem of continuous luxury.
+          service, MagMercy provides an ecosystem of continuous luxury.
         </p>
       </div>
 

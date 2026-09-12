@@ -94,7 +94,7 @@ export default function ReviewsPage() {
               Submit Your Stay Reflection
             </h2>
             <p className="text-xs text-charcoal-600">
-              Please enter your Booking Reference ID to verify your recent stay at MegaMercy Apartment.
+              Please enter your Booking Reference ID to verify your recent stay at MagMercy Apartment.
             </p>
           </div>
 

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Sparkles, Shield, Award, Heart, CheckCircle2, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About MegaMercy · The Story & Hospitality Philosophy",
+  title: "About MagMercy · The Story & Hospitality Philosophy",
   description:
-    "Discover the origin story, architectural vision, and executive hospitality philosophy behind MegaMercy Apartment in Ikoyi, Lagos.",
+    "Discover the origin story, architectural vision, and executive hospitality philosophy behind MagMercy Apartment in Ikoyi, Lagos.",
 };
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
             A Vision Born from Global Experience
           </h2>
           <p>
-            MegaMercy Apartment was conceived not merely to participate in the luxury short-let market,
+            MagMercy Apartment was conceived not merely to participate in the luxury short-let market,
             but to redefine it in West Africa. The founders—frequent international travelers across
             Geneva, Dubai, London, and Singapore—recognized a recurring dilemma facing visiting
             executives and dignitaries in Lagos: traditional five-star hotels were crowded and lacked
@@ -47,7 +47,7 @@ export default function AboutPage() {
             choice was made with a singular objective: utter continuity of peace.
           </p>
           <p>
-            When you cross the threshold of MegaMercy, the sensory overload of Lagos transforms into
+            When you cross the threshold of MagMercy, the sensory overload of Lagos transforms into
             tranquil serenity. Here, your confidential deliberations remain secure, your sleep is
             undisturbed, and your comfort is orchestrated by a dedicated private butler.
           </p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
         <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-bronze-400/30 shadow-xl">
           <img
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-            alt="MegaMercy Architecture"
+            alt="MagMercy Architecture"
             className="w-full h-full object-cover"
           />
         </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
             OUR CORNERSTONES
           </span>
           <h3 className="text-3xl font-serif font-bold text-charcoal-900">
-            The MegaMercy Pillars
+            The MagMercy Pillars
           </h3>
         </div>
 
@@ -112,7 +112,7 @@ export default function AboutPage() {
       {/* CTA */}
       <div className="p-10 rounded-3xl bg-sand-50 border border-bronze-400/30 text-center space-y-4 shadow-lg">
         <h3 className="text-2xl font-serif font-bold text-charcoal-900">
-          Experience the MegaMercy Standard
+          Experience the MagMercy Standard
         </h3>
         <p className="text-xs text-charcoal-600 max-w-lg mx-auto">
           Contact our lead butler today for custom delegation packages or private viewings.

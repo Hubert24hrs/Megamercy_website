@@ -10,7 +10,7 @@ export default function WhatsAppConcierge() {
   const quickPrompts = [
     {
       title: "Inquire About Availability",
-      text: "Hello MegaMercy Butler, I would like to check availability for an upcoming stay in Ikoyi.",
+      text: "Hello MagMercy Butler, I would like to check availability for an upcoming stay in Ikoyi.",
     },
     {
       title: "VIP Airport Tarmac Protocol",
@@ -18,18 +18,18 @@ export default function WhatsAppConcierge() {
     },
     {
       title: "Corporate / Diplomatic Long-Stay",
-      text: "Greetings, I represent an executive delegation inquiring about a multi-week residence booking at MegaMercy.",
+      text: "Greetings, I represent an executive delegation inquiring about a multi-week residence booking at MagMercy.",
     },
     {
       title: "Private Chef & Dining Consultation",
-      text: "Hello, I would like to inquire about having a private chef service during our stay at MegaMercy.",
+      text: "Hello, I would like to inquire about having a private chef service during our stay at MagMercy.",
     },
   ];
 
   const handleOpenWhatsApp = (customText?: string) => {
     const message = encodeURIComponent(
       customText ||
-        "Hello MegaMercy Concierge, I would like to inquire about reserving the Ikoyi penthouse."
+        "Hello MagMercy Concierge, I would like to inquire about reserving the Ikoyi penthouse."
     );
     window.open(`https://wa.me/2348140007890?text=${message}`, "_blank");
   };
@@ -48,7 +48,7 @@ export default function WhatsAppConcierge() {
               </div>
               <div>
                 <h4 className="text-xs font-serif font-bold text-charcoal-900">
-                  MEGAMERCY VIP BUTLER
+                  MAGMERCY VIP BUTLER
                 </h4>
                 <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-700 font-semibold">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

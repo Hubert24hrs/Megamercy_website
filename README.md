@@ -1,4 +1,4 @@
-# MegaMercy Apartment — Ultra-Luxury 3D Short-Let Website
+# MagMercy Apartment — Ultra-Luxury 3D Short-Let Website
 
 > **Location**: Bourdillon Road, Ikoyi, Lagos, Nigeria  
 > **Brand Positioning**: Ultra-premium, futuristic, secure short-let apartment experience for discerning travelers, executives, and diplomats visiting Lagos.  
@@ -8,7 +8,7 @@
 
 ## 🏛️ Architectural Overview
 
-MegaMercy Apartment is an award-winning digital experience crafted for an ultra-luxury short-let residence in prime Ikoyi, Lagos. The site blends:
+MagMercy Apartment is an award-winning digital experience crafted for an ultra-luxury short-let residence in prime Ikoyi, Lagos. The site blends:
 * **Interactive 3D WebGL (Three.js)**: A real-time 3D pavilion with orbiting architectural geometry, camera viewpoints, and low-power fallback.
 * **Smart Fortress Telemetry**: A high-tech smart-home / physical security HUD with biometric unlock simulation, redundant power monitoring, and perimeter surveillance indicators.
 * **Multi-Currency Live Booking Engine**: Instant pricing conversions across Nigerian Naira (`NGN ₦`), US Dollars (`USD $`), British Pounds (`GBP £`), and Euros (`EUR €`) with dynamic stay upgrades (Armored Chauffeur, Private Chef, Airport Tarmac VIP protocol).
@@ -23,7 +23,7 @@ MegaMercy Apartment is an award-winning digital experience crafted for an ultra-
 | Layer | Technologies |
 | :--- | :--- |
 | **Framework** | Next.js 14 (App Router), React 18, TypeScript |
-| **Styling** | Tailwind CSS with custom obsidian, gold, and emerald glassmorphism tokens |
+| **Styling** | Tailwind CSS with custom coastal airy, obsidian, gold, and glassmorphism tokens |
 | **3D Graphics** | Three.js (WebGL with ACESFilmic tone mapping, ambient particles, and mouse parallax) |
 | **Icons** | Lucide React |
 | **Payments Integration** | Prepared hooks for Paystack & Flutterwave (Nigeria) + Stripe (International) |
@@ -66,7 +66,7 @@ MegaMercy Apartment is an award-winning digital experience crafted for an ultra-
 │       ├── data.ts                # Master repository data (rooms, amenities, landmarks)
 │       └── currency.ts            # Currency conversion logic (USD, NGN, GBP, EUR)
 ├── public/                        # Static brand assets
-├── tailwind.config.ts             # Obsidian, champagne gold, and emerald design system
+├── tailwind.config.ts             # Coastal, obsidian, champagne gold, and emerald design system
 ├── tsconfig.json                  # TypeScript compiler settings
 └── package.json                   # Dependencies and npm scripts
 ```
@@ -108,4 +108,4 @@ npm run start
 ---
 
 ## 📜 License
-Private & Proprietary. All rights reserved by **MegaMercy Apartment**, Ikoyi, Lagos.
+Private & Proprietary. All rights reserved by **MagMercy Apartment**, Ikoyi, Lagos.

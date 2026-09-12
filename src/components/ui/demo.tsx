@@ -9,7 +9,7 @@ export default function Default() {
       searchPlaceholder="Search suites, amenities, or security protocols..."
       searchButtonText="Explore"
       heroImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-      heroAlt="MegaMercy Residence Architecture"
+      heroAlt="MagMercy Residence Architecture"
       bottomTitle="Engineered for"
       bottomTitleLine2="absolute peace."
       bottomText="Triple-redundant power, German acoustic glazing, and 24/7 dedicated butler service on Bourdillon Road."

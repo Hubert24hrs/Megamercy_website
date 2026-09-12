@@ -123,7 +123,7 @@ export default function ReviewsCarousel() {
 
         <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           In accordance with our strict Non-Disclosure Agreements (NDAs) and statutory obligations
-          under the Nigeria Data Protection Act (NDPA), MegaMercy does not publish guest names,
+          under the Nigeria Data Protection Act (NDPA), MagMercy does not publish guest names,
           photographs, or stay itineraries on public web pages.
         </p>
 
@@ -156,7 +156,7 @@ export default function ReviewsCarousel() {
 
         <div className="flex flex-wrap items-center gap-4 pt-4">
           <a
-            href="https://wa.me/2348140007890?text=Hello%20MegaMercy%2C%20I%20would%20like%20to%20request%20verified%20diplomatic%20reference%20credentials%20for%20our%20delegation."
+            href="https://wa.me/2348140007890?text=Hello%20MagMercy%2C%20I%20would%20like%20to%20request%20verified%20diplomatic%20reference%20credentials%20for%20our%20delegation."
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md shadow-bronze-500/20 flex items-center gap-2"

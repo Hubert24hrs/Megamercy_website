@@ -63,7 +63,7 @@ export default function GalleryPage() {
         </h1>
         <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           High-definition photography capturing the subtle interplay of light, Italian craftsmanship,
-          and tranquil lagoon vistas at MegaMercy.
+          and tranquil lagoon vistas at MagMercy.
         </p>
 
         {/* Filter Buttons */}

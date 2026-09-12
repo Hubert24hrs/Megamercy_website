@@ -311,7 +311,7 @@ export default function BookingWidget({
             </button>
 
             <a
-              href={`https://wa.me/2348140007890?text=Hello%20MegaMercy%2C%20I%20am%20interested%20in%20booking%20from%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights)%20for%20${guests}%20guests.`}
+              href={`https://wa.me/2348140007890?text=Hello%20MagMercy%2C%20I%20am%20interested%20in%20booking%20from%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights)%20for%20${guests}%20guests.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 rounded-2xl bg-white border border-bronze-400/40 hover:border-bronze-500 text-charcoal-800 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
