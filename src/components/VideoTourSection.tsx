@@ -17,7 +17,7 @@ const VIDEOS: VideoItem[] = [
   {
     id: "tour-1",
     title: "Master Residence Walkthrough",
-    duration: "Live Tour",
+    duration: "Tour 1",
     src: "/videos/magmercy_tour_1.mp4",
     description: "First-hand cinematic video walkthrough of MagMercy Apartment at 89 Lafiaji Street, Dolphin Estate, Ikoyi.",
     badge: "Verified Tour 1",
@@ -30,7 +30,7 @@ const VIDEOS: VideoItem[] = [
     src: "/videos/magmercy_tour_2.mp4",
     description: "Panoramic overview of the furnished lounge, acoustic double glazing, and ambient natural lighting.",
     badge: "Verified Tour 2",
-    available: false,
+    available: true,
   },
   {
     id: "tour-3",
@@ -39,7 +39,7 @@ const VIDEOS: VideoItem[] = [
     src: "/videos/magmercy_tour_3.mp4",
     description: "Private sanctuary tour showcasing king plush bed suite, marble bath, and custom dressing corridor.",
     badge: "Verified Tour 3",
-    available: false,
+    available: true,
   },
   {
     id: "tour-4",
@@ -48,7 +48,7 @@ const VIDEOS: VideoItem[] = [
     src: "/videos/magmercy_tour_4.mp4",
     description: "Close-up architectural review of the culinary island, appliances, and peaceful Dolphin Estate grounds.",
     badge: "Verified Tour 4",
-    available: false,
+    available: true,
   },
 ];
 
