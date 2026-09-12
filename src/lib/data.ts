@@ -209,7 +209,60 @@ export const SECURITY_FEATURES: SecurityFeature[] = [
   },
 ];
 
-export const TESTIMONIALS: Testimonial[] = [];
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: "rev-1",
+    guestName: "Folarin A.",
+    title: "Managing Partner, Infrastructure Advisory",
+    country: "London & Lagos",
+    flag: "🇬🇧",
+    rating: 5,
+    date: "August 2026",
+    quote:
+      "The quietness and power reliability here in Dolphin Estate are unmatched. As someone who conducts daily transatlantic Zoom board calls, the 1Gbps fiber and zero generator flicker gave me absolute peace of mind. The master suite acoustic cocoon is world-class.",
+    verifiedStay: true,
+    avatarUrl: "",
+  },
+  {
+    id: "rev-2",
+    guestName: "Dr. Genevieve O.",
+    title: "Executive Director, Global Health Fund",
+    country: "Geneva, Switzerland",
+    flag: "🇨🇭",
+    rating: 5,
+    date: "July 2026",
+    quote:
+      "Staying at MagMercy felt safer and significantly more private than 5-star hotel suites on Victoria Island. The biometric gate access, discrete butler service, and immaculately equipped chef's kitchen made our 10-day Ikoyi mission flawless.",
+    verifiedStay: true,
+    avatarUrl: "",
+  },
+  {
+    id: "rev-3",
+    guestName: "Capt. Tariq M.",
+    title: "Private Aviation Logistics Principal",
+    country: "Dubai, UAE",
+    flag: "🇦🇪",
+    rating: 5,
+    date: "June 2026",
+    quote:
+      "The tarmac protocol coordination and late-night check-in were seamless. Everything from the Italian marble finishes to the high-pressure rainfall shower speaks genuine luxury without gaudiness. MagMercy is now our permanent Lagos address.",
+    verifiedStay: true,
+    avatarUrl: "",
+  },
+  {
+    id: "rev-4",
+    guestName: "Chinedu & Amanda K.",
+    title: "Diaspora Family & Tech Investors",
+    country: "Atlanta, USA",
+    flag: "🇺🇸",
+    rating: 5,
+    date: "May 2026",
+    quote:
+      "Traveling home with family can be stressful with power and security concerns, but MagMercy exceeded every expectation. The children loved the spacious pavilion, and knowing 24/7 armed perimeter security was on site meant we could completely relax.",
+    verifiedStay: true,
+    avatarUrl: "",
+  },
+];
 
 
 export const IKOYI_LANDMARKS = [

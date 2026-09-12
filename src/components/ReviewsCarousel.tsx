@@ -66,26 +66,33 @@ export default function ReviewsCarousel() {
           </p>
 
           <div className="mt-6 flex items-center gap-4">
-            {activeReview.avatarUrl && (
+            {activeReview.avatarUrl ? (
               <img
                 src={activeReview.avatarUrl}
                 alt={activeReview.guestName}
                 className="w-12 h-12 rounded-full object-cover border border-bronze-400/50 shadow-sm"
               />
+            ) : (
+              <div className="w-12 h-12 rounded-full bg-bronze-500/15 border border-bronze-400/40 text-bronze-800 flex items-center justify-center font-serif font-bold text-sm shadow-sm shrink-0">
+                {activeReview.guestName.slice(0, 2).toUpperCase()}
+              </div>
             )}
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <h4 className="text-sm font-bold text-charcoal-900">{activeReview.guestName}</h4>
                 {activeReview.flag && <span className="text-sm">{activeReview.flag}</span>}
+                <div className="flex items-center text-amber-500 text-xs">
+                  {"★".repeat(activeReview.rating || 5)}
+                </div>
                 {activeReview.verifiedStay && (
                   <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-[10px] font-mono text-emerald-800 border border-emerald-500/30 font-semibold shadow-sm">
-                    <ShieldCheck className="w-3 h-3" />
-                    <span>VERIFIED DIPLOMATIC STAY</span>
+                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                    <span>VERIFIED RESIDENCE STAY</span>
                   </span>
                 )}
               </div>
-              <p className="text-xs text-charcoal-600">
-                {activeReview.title} · {activeReview.country}
+              <p className="text-xs text-charcoal-600 mt-0.5">
+                {activeReview.title} · {activeReview.country} · <span className="font-mono text-[10px] text-charcoal-500">{activeReview.date}</span>
               </p>
             </div>
           </div>

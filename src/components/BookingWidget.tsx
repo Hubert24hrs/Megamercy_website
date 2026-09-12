@@ -2,8 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import { CurrencyCode } from "@/lib/types";
-import { formatPrice, BASE_NIGHTLY_RATE_USD, CURRENCY_CONFIG } from "@/lib/currency";
+import {
+  formatPrice,
+  formatPriceNGN,
+  BASE_NIGHTLY_RATE_USD,
+  BASE_NIGHTLY_RATE_NGN,
+  MIN_STAY_NIGHTS,
+  CAUTION_DEPOSIT_USD,
+  CAUTION_DEPOSIT_NGN,
+  LONG_STAY_DISCOUNTS,
+  CURRENCY_CONFIG,
+} from "@/lib/currency";
 import AvailabilityCalendar from "@/components/AvailabilityCalendar";
+import PaystackCheckout from "@/components/PaystackCheckout";
 import {
   Calendar,
   Users,
@@ -18,6 +29,10 @@ import {
   Plane,
   AlertCircle,
   RefreshCw,
+  Printer,
+  MessageCircle,
+  Tag,
+  Building,
 } from "lucide-react";
 import { AvailabilityResponse } from "@/lib/calendar/types";
 
@@ -36,15 +51,18 @@ export default function BookingWidget({
   const todayStr = getOffsetDate(0);
   const [currency, setCurrency] = useState<CurrencyCode>(initialCurrency);
   const [checkInDate, setCheckInDate] = useState(getOffsetDate(1));
-  const [checkOutDate, setCheckOutDate] = useState(getOffsetDate(5));
+  const [checkOutDate, setCheckOutDate] = useState(getOffsetDate(3)); // 2 nights minimum default
   const [reservationToken, setReservationToken] = useState("");
   const [guestName, setGuestName] = useState("");
   const [guestEmail, setGuestEmail] = useState("");
+  const [guestPhone, setGuestPhone] = useState("");
   const [guests, setGuests] = useState(2);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [isPaid, setIsPaid] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
+  const [showPaystackModal, setShowPaystackModal] = useState(false);
 
   // Availability & Conflict detection
   const [availability, setAvailability] = useState<AvailabilityResponse | null>(null);
@@ -98,8 +116,19 @@ export default function BookingWidget({
   const d2 = new Date(checkOutDate);
   const timeDiff = d2.getTime() - d1.getTime();
   const nights = Math.max(1, Math.ceil(timeDiff / (1000 * 3600 * 24)));
+  const isMinStayMet = nights >= MIN_STAY_NIGHTS;
 
   const basePriceUSD = BASE_NIGHTLY_RATE_USD * nights;
+
+  // Long stay discount calculation
+  let discountPercent = 0;
+  if (nights >= 30) {
+    discountPercent = LONG_STAY_DISCOUNTS.MONTHLY_DISCOUNT_PERCENT; // 20%
+  } else if (nights >= 7) {
+    discountPercent = LONG_STAY_DISCOUNTS.WEEKLY_DISCOUNT_PERCENT; // 10%
+  }
+  const discountUSD = Math.round(basePriceUSD * (discountPercent / 100));
+  const discountedBaseUSD = basePriceUSD - discountUSD;
 
   // Addons
   const ADDONS = [
@@ -131,8 +160,10 @@ export default function BookingWidget({
     return acc + (item ? item.costUSD : 0);
   }, 0);
 
-  const securityDepositUSD = 300; // refundable
-  const grandTotalUSD = basePriceUSD + addonsTotalUSD;
+  const securityDepositUSD = CAUTION_DEPOSIT_USD; // refundable
+  const grandTotalUSD = discountedBaseUSD + addonsTotalUSD;
+  const grandTotalWithDepositUSD = grandTotalUSD + securityDepositUSD;
+  const grandTotalNGN = Math.round(grandTotalWithDepositUSD * CURRENCY_CONFIG.NGN.rateFromUSD);
 
   const toggleAddon = (id: string) => {
     if (selectedAddons.includes(id)) {
@@ -143,7 +174,7 @@ export default function BookingWidget({
   };
 
   const handleInstantReserve = async () => {
-    if (conflictDates.length > 0) return;
+    if (conflictDates.length > 0 || !isMinStayMet) return;
 
     setSubmitting(true);
     try {
@@ -165,14 +196,12 @@ export default function BookingWidget({
       if (res.ok && data.success) {
         setReservationToken(data.reservation?.uid || `MM-${Date.now().toString(36).toUpperCase()}`);
         setBookingConfirmed(true);
-        // Refresh availability in background
         loadAvailability();
       } else {
         alert(data.error || "Reservation date conflict detected. Please select available dates.");
       }
     } catch (err) {
       console.error("Failed to submit reservation:", err);
-      // Fallback
       const token = `MM-${Date.now().toString(36).toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`;
       setReservationToken(token);
       setBookingConfirmed(true);
@@ -181,10 +210,51 @@ export default function BookingWidget({
     }
   };
 
+  const handlePaymentSuccess = async (ref: string, paidAmount: number) => {
+    setShowPaystackModal(false);
+    setReservationToken(ref);
+    setIsPaid(true);
+    setBookingConfirmed(true);
+
+    try {
+      await fetch("/api/availability", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "reserve",
+          startDate: checkInDate,
+          endDate: checkOutDate,
+          suiteId: "penthouse",
+          guestName: guestName || "VIP Paid Guest",
+          guestEmail: guestEmail || "guest@magmercy.direct",
+          summary: `Paid VIP Penthouse Reservation [Ref: ${ref}]`,
+        }),
+      });
+      loadAvailability();
+    } catch (err) {
+      console.error("Failed to sync paid reservation:", err);
+    }
+  };
+
   return (
     <div className="w-full rounded-3xl glass-panel p-6 lg:p-8 border border-bronze-400/30 shadow-xl relative overflow-hidden bg-white/95">
       {/* Ambient background soft glow */}
       <div className="absolute top-0 right-0 w-72 h-72 bg-bronze-400/10 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Paystack Checkout Modal */}
+      <PaystackCheckout
+        isOpen={showPaystackModal}
+        onClose={() => setShowPaystackModal(false)}
+        amountNGN={grandTotalNGN}
+        guestName={guestName || "VIP Guest"}
+        guestEmail={guestEmail || "guest@magmercy.direct"}
+        guestPhone={guestPhone}
+        checkInDate={checkInDate}
+        checkOutDate={checkOutDate}
+        nights={nights}
+        guests={guests}
+        onPaymentSuccess={handlePaymentSuccess}
+      />
 
       {/* Header with Currency Selector */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-charcoal-900/10">
@@ -195,7 +265,7 @@ export default function BookingWidget({
             </span>
             <span className="inline-flex items-center gap-1 text-[10px] font-mono text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full font-bold">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-              AIRBNB / BOOKING.COM SYNC ACTIVE
+              AIRBNB &amp; BOOKING.COM SYNC ACTIVE
             </span>
           </div>
           <div className="flex items-baseline gap-2 mt-1">
@@ -203,6 +273,9 @@ export default function BookingWidget({
               {formatPrice(BASE_NIGHTLY_RATE_USD, currency)}
             </span>
             <span className="text-xs text-charcoal-500 font-mono">/ NIGHT</span>
+            <span className="text-[11px] font-mono text-bronze-700 bg-sand-100 px-2 py-0.5 rounded-md ml-1 font-semibold">
+              MIN. {MIN_STAY_NIGHTS} NIGHTS
+            </span>
           </div>
         </div>
 
@@ -226,27 +299,95 @@ export default function BookingWidget({
       </div>
 
       {bookingConfirmed ? (
-        <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in duration-300">
-          <div className="w-16 h-16 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 mx-auto flex items-center justify-center">
-            <Check className="w-8 h-8" />
+        /* Official VIP Reservation Voucher */
+        <div className="py-8 space-y-6 animate-in fade-in zoom-in duration-300">
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 mx-auto flex items-center justify-center">
+              <Check className="w-7 h-7" />
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-charcoal-900">
+              {isPaid ? "Reservation Settle & Dates Locked" : "Reservation Confirmed & Dates Locked"}
+            </h3>
+            <p className="text-xs text-charcoal-600">
+              MagMercy Luxury Penthouse · 89 Lafiaji Street, Dolphin Estate, Ikoyi, Lagos
+            </p>
           </div>
-          <h3 className="text-2xl font-serif font-bold text-charcoal-900">
-            Reservation Confirmed &amp; Dates Locked
-          </h3>
-          <div className="inline-block px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono text-bronze-700 font-bold">
-            REFERENCE: {reservationToken}
+
+          {/* Printable Voucher Card */}
+          <div className="p-6 rounded-2xl bg-sand-50 border border-bronze-400/30 space-y-4 shadow-sm text-xs">
+            <div className="flex justify-between items-center pb-3 border-b border-charcoal-900/10">
+              <div>
+                <span className="text-[10px] font-mono text-charcoal-500 block uppercase">Booking Reference</span>
+                <span className="text-sm font-mono font-black text-bronze-700">{reservationToken}</span>
+              </div>
+              <div className="text-right">
+                <span className="text-[10px] font-mono text-charcoal-500 block uppercase">Status</span>
+                <span className={`inline-flex items-center gap-1 font-bold font-mono text-xs ${isPaid ? "text-emerald-700" : "text-amber-700"}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                  {isPaid ? "PAID & GUARANTEED" : "DATES HELD (PMS BLOCKED)"}
+                </span>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-2">
+              <div>
+                <span className="text-[10px] font-mono text-charcoal-500 block">CHECK-IN</span>
+                <span className="font-bold text-charcoal-900 text-xs">{checkInDate}</span>
+                <span className="text-[10px] text-charcoal-500 block">From 2:00 PM (14:00 WAT)</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-charcoal-500 block">CHECK-OUT</span>
+                <span className="font-bold text-charcoal-900 text-xs">{checkOutDate}</span>
+                <span className="text-[10px] text-charcoal-500 block">By 11:00 AM (11:00 WAT)</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-charcoal-500 block">DURATION</span>
+                <span className="font-bold text-charcoal-900 text-xs">{nights} Nights</span>
+                <span className="text-[10px] text-charcoal-500 block">{guests} Guests</span>
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-charcoal-500 block">TOTAL SETTLEMENT</span>
+                <span className="font-bold text-charcoal-900 text-xs font-mono">
+                  {formatPrice(grandTotalWithDepositUSD, currency)}
+                </span>
+                <span className="text-[10px] text-emerald-700 block">Incl. ₦100,000 Bond</span>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-charcoal-900/10 text-charcoal-600 leading-relaxed text-[11px]">
+              🔒 <strong>Arrival Telemetry:</strong> These dates are officially blocked on Airbnb, Booking.com, and direct calendar. Your encrypted biometric smart-lock PIN will be dispatched directly to your mobile 3 hours before touchdown.
+            </div>
           </div>
-          <p className="text-xs text-charcoal-600 max-w-md mx-auto leading-relaxed">
-            Your stay ({checkInDate} to {checkOutDate}) for {guests} guests has been logged in our PMS.
-            These dates are now automatically blocked on our direct site, Airbnb, and Booking.com. Our lead butler will connect with you via WhatsApp or Email within 5 minutes.
-          </p>
-          <button
-            type="button"
-            onClick={() => setBookingConfirmed(false)}
-            className="px-6 py-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-charcoal-800 hover:bg-sand-200 transition-colors font-semibold"
-          >
-            Modify Reservation Details
-          </button>
+
+          {/* Action Links */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href={`https://wa.me/2348025666687?text=Hello%20MagMercy%20Butler%20Desk%2C%20my%20reservation%20reference%20is%20${reservationToken}%20for%20dates%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights).%20Please%20confirm%20our%20arrival%20protocol.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>Connect with Butler on WhatsApp</span>
+            </a>
+
+            <button
+              type="button"
+              onClick={() => typeof window !== "undefined" && window.print()}
+              className="py-3 px-4 rounded-xl bg-sand-100 hover:bg-sand-200 border border-charcoal-900/10 text-charcoal-800 text-xs font-mono font-semibold flex items-center justify-center gap-2 transition-colors"
+            >
+              <Printer className="w-4 h-4" />
+              <span>Print / Save Voucher</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setBookingConfirmed(false)}
+              className="py-3 px-4 rounded-xl bg-white border border-charcoal-900/10 text-charcoal-600 hover:text-charcoal-900 text-xs font-mono transition-colors"
+            >
+              Modify
+            </button>
+          </div>
         </div>
       ) : (
         /* Booking Inputs */
@@ -313,6 +454,16 @@ export default function BookingWidget({
             </div>
           </div>
 
+          {/* Minimum Stay Notice if less than 2 nights */}
+          {!isMinStayMet && (
+            <div className="p-3 rounded-xl bg-amber-50 border border-amber-300 text-xs text-amber-900 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
+              <span>
+                <strong>2-Night Minimum Stay Policy:</strong> MagMercy penthouse reservations require at least {MIN_STAY_NIGHTS} nights. Please extend your checkout date.
+              </span>
+            </div>
+          )}
+
           {/* Conflict Warning Banner */}
           {conflictDates.length > 0 && (
             <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-xs text-amber-900 flex items-start gap-3 animate-in shake duration-300">
@@ -328,7 +479,7 @@ export default function BookingWidget({
             </div>
           )}
 
-          {/* Guest Name / Contact Inputs */}
+          {/* Guest Name & Email Inputs */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-3.5 rounded-2xl bg-alabaster-50 border border-charcoal-900/15 focus-within:border-bronze-500 focus-within:bg-white transition-colors">
               <label className="text-[11px] font-mono text-charcoal-600 block mb-1 font-semibold">
@@ -438,6 +589,19 @@ export default function BookingWidget({
               </span>
             </div>
 
+            {/* Long stay discount if applicable */}
+            {discountPercent > 0 && (
+              <div className="flex justify-between text-emerald-700 font-medium">
+                <span className="flex items-center gap-1">
+                  <Tag className="w-3.5 h-3.5" />
+                  <span>Long Stay Privilege ({discountPercent}% Off)</span>
+                </span>
+                <span className="font-mono font-bold">
+                  -{formatPrice(discountUSD, currency)}
+                </span>
+              </div>
+            )}
+
             {selectedAddons.length > 0 && (
               <div className="flex justify-between text-charcoal-700">
                 <span>Curated VIP Services ({selectedAddons.length})</span>
@@ -458,52 +622,64 @@ export default function BookingWidget({
             </div>
 
             <div className="pt-2.5 border-t border-charcoal-900/10 flex justify-between items-baseline">
-              <span className="text-sm font-bold text-charcoal-900">Estimated Total</span>
+              <span className="text-sm font-bold text-charcoal-900">Total Settlement</span>
               <div className="text-right">
                 <span className="text-xl lg:text-2xl font-serif font-black text-charcoal-900">
-                  {formatPrice(grandTotalUSD + securityDepositUSD, currency)}
+                  {formatPrice(grandTotalWithDepositUSD, currency)}
                 </span>
                 <span className="block text-[10px] font-mono text-charcoal-500 font-medium">
-                  INCL. TAXES &amp; DIPLOMATIC CLEANSING
+                  ≈ ₦{grandTotalNGN.toLocaleString("en-NG")} · INCL. TAXES &amp; CLEANSING
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Primary Action Buttons */}
+          {/* Primary Action Buttons: Paystack vs WhatsApp */}
           <div className="space-y-3 pt-2">
+            {/* Paystack Online Settlement */}
             <button
               type="button"
-              onClick={handleInstantReserve}
-              disabled={conflictDates.length > 0 || submitting}
+              onClick={() => setShowPaystackModal(true)}
+              disabled={conflictDates.length > 0 || !isMinStayMet}
               className={`w-full py-4 rounded-2xl font-serif font-bold text-sm uppercase tracking-wider shadow-lg transition-all flex items-center justify-center gap-2 ${
-                conflictDates.length > 0
+                conflictDates.length > 0 || !isMinStayMet
                   ? "bg-charcoal-300 text-charcoal-500 cursor-not-allowed shadow-none"
                   : "bg-bronze-500 hover:bg-bronze-600 text-white shadow-bronze-500/25"
               }`}
             >
+              <CreditCard className="w-4 h-4" />
+              <span>Pay Online via Paystack (Card / USSD / Wire)</span>
+            </button>
+
+            {/* Reserve Without Card / Direct PMS hold */}
+            <button
+              type="button"
+              onClick={handleInstantReserve}
+              disabled={conflictDates.length > 0 || !isMinStayMet || submitting}
+              className="w-full py-3 rounded-2xl bg-sand-100 hover:bg-sand-200 border border-bronze-400/30 text-charcoal-800 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2"
+            >
               {submitting ? (
                 <>
                   <RefreshCw className="w-4 h-4 animate-spin" />
-                  <span>Syncing PMS &amp; Securing Dates...</span>
+                  <span>Locking PMS Dates...</span>
                 </>
-              ) : conflictDates.length > 0 ? (
-                <span>Dates Blocked by OTA Sync — Select New Dates</span>
               ) : (
                 <>
-                  <CreditCard className="w-4 h-4" />
-                  <span>Instant Reserve &amp; Block Dates</span>
+                  <ShieldCheck className="w-4 h-4 text-bronze-600" />
+                  <span>Hold &amp; Block Dates in PMS (Pay on Arrival / Wire)</span>
                 </>
               )}
             </button>
 
+            {/* Direct WhatsApp VIP Concierge */}
             <a
-              href={`https://wa.me/2348025666687?text=Hello%20MagMercy%2C%20I%20am%20interested%20in%20booking%20from%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights)%20for%20${guests}%20guests.`}
+              href={`https://wa.me/2348025666687?text=Hello%20MagMercy%20Concierge%2C%20I%20wish%20to%20reserve%20the%20Ikoyi%20Penthouse%20from%20${checkInDate}%20to%20${checkOutDate}%20(${nights}%20nights)%20for%20${guests}%20guests.%20Estimated%20Total:%20${formatPrice(grandTotalWithDepositUSD, currency)}.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-2xl bg-white border border-bronze-400/40 hover:border-bronze-500 text-charcoal-800 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
+              className="w-full py-3 rounded-2xl bg-white border border-emerald-500/40 hover:border-emerald-600 text-emerald-800 text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm"
             >
-              <span>Or Inquire Direct with Host Butler (WhatsApp)</span>
+              <MessageCircle className="w-4 h-4 text-emerald-600" />
+              <span>Or Reserve Directly via WhatsApp Concierge</span>
             </a>
           </div>
 
@@ -515,7 +691,7 @@ export default function BookingWidget({
             </div>
             <div className="flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-bronze-600" />
-              <span>Instant access code on arrival</span>
+              <span>Check-in 2:00 PM · Check-out 11:00 AM</span>
             </div>
           </div>
         </div>

@@ -66,15 +66,25 @@ export default function ContactPage() {
                 Message Dispatched Securely
               </h4>
               <p className="text-xs text-charcoal-600 max-w-sm mx-auto leading-relaxed">
-                Thank you. Our Head Butler has received your transmission and will connect with you via
-                your preferred channel within 15 minutes.
+                Thank you, {formData.name || "VIP Guest"}. Our Head Butler has received your transmission and will connect with you via your preferred channel within 15 minutes.
               </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="px-6 py-2 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-bronze-700 font-semibold shadow-sm"
-              >
-                Send Another Message
-              </button>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                <a
+                  href={`https://wa.me/2348025666687?text=Hello%20MagMercy%20Head%20Butler%2C%20I%20just%20submitted%20a%20contact%20inquiry%20under%20the%20name%20${encodeURIComponent(formData.name)}.%20Purpose:%20${encodeURIComponent(formData.purpose)}.%20Dates:%20${encodeURIComponent(formData.dates)}.%20Message:%20${encodeURIComponent(formData.message)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-mono font-bold flex items-center justify-center gap-2 shadow-md transition-colors"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Connect Now on WhatsApp (+2348025666687)</span>
+                </a>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-2.5 rounded-xl bg-sand-100 border border-bronze-400/30 text-xs font-mono text-bronze-700 font-semibold shadow-sm"
+                >
+                  Send Another Message
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
