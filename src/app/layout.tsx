@@ -13,6 +13,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://magmercyapartment.com"),
   title: "MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",
   description:
     "Ultra-premium, futuristic short-let apartment in prime Ikoyi, Lagos. 3,400 sq.ft of curated modernist luxury, panoramic Lagos Lagoon views, and 24/7 diplomatic fortress security.",
