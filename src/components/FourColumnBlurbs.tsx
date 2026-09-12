@@ -102,23 +102,42 @@ export default function FourColumnBlurbs() {
         <div className="p-7 rounded-3xl bg-white border border-charcoal-900/15 shadow-lg flex flex-col justify-between hover:border-coastal-blue transition-all group">
           <div>
             <div className="w-12 h-12 rounded-2xl bg-coastal-teal/15 border border-coastal-teal/40 text-coastal-blue flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-              <Instagram className="w-6 h-6" />
+              {/* TikTok inline SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-6 h-6"
+                aria-hidden="true"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+              </svg>
             </div>
             <h3 className="text-xl font-serif font-black text-charcoal-900 mb-2">
               #MagMercyIkoyi
             </h3>
             <p className="text-xs text-charcoal-600 leading-relaxed">
               Capture your morning espresso overlooking the lagoon or an evening on the terrace. Follow
-              our verified residency gallery and tag #MagMercyIkoyi.
+              our TikTok & Instagram and tag #MagMercyIkoyi.
             </p>
           </div>
-          <div className="pt-6">
-            <Link
-              href="/gallery"
-              className="w-full py-3 px-4 rounded-xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-coastal-blue/20 flex items-center justify-center text-center"
+          <div className="pt-6 flex flex-col gap-2">
+            <a
+              href={BRAND_DETAILS.socials.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-3 px-4 rounded-xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-coastal-blue/20 flex items-center justify-center gap-2 text-center"
             >
-              Explore Gallery
-            </Link>
+              Follow on TikTok
+            </a>
+            <a
+              href={BRAND_DETAILS.socials.instagram}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full py-2.5 px-4 rounded-xl bg-white border border-charcoal-900/15 hover:border-coastal-blue text-charcoal-800 font-serif font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 text-center"
+            >
+              Follow on Instagram
+            </a>
           </div>
         </div>
       </div>
