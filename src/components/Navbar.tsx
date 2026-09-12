@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export default function Navbar({
-  currentCurrency = "USD",
+  currentCurrency = "NGN",
   onCurrencyChange,
 }: {
   currentCurrency?: CurrencyCode;
@@ -140,7 +140,7 @@ export default function Navbar({
 
             {currencyDropdownOpen && (
               <div className="absolute right-0 mt-2 w-36 rounded-2xl bg-white/95 backdrop-blur-xl border border-bronze-400/30 shadow-xl p-1 z-50">
-                {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
+              {(["NGN", "USD", "EUR", "GBP"] as CurrencyCode[]).map((c) => (
                   <button
                     key={c}
                     onClick={() => {
@@ -204,7 +204,7 @@ export default function Navbar({
           <div className="mt-6 pt-6 border-t border-charcoal-900/10 flex items-center justify-between">
             <span className="text-xs font-mono text-charcoal-500 font-semibold">CURRENCY</span>
             <div className="flex items-center gap-2">
-              {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
+              {(["NGN", "USD", "EUR", "GBP"] as CurrencyCode[]).map((c) => (
                 <button
                   key={c}
                   onClick={() => {

@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 export default function BookingWidget({
-  initialCurrency = "USD",
+  initialCurrency = "NGN",
 }: {
   initialCurrency?: CurrencyCode;
 }) {
@@ -114,7 +114,7 @@ export default function BookingWidget({
 
         {/* Currency Switcher Buttons */}
         <div className="flex items-center gap-1.5 p-1 rounded-xl bg-sand-100 border border-charcoal-900/10">
-          {(["USD", "NGN", "GBP", "EUR"] as CurrencyCode[]).map((c) => (
+          {(["NGN", "USD", "EUR", "GBP"] as CurrencyCode[]).map((c) => (
             <button
               key={c}
               onClick={() => setCurrency(c)}

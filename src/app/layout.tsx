@@ -58,7 +58,7 @@ export default function RootLayout({
     },
     telephone: "+2348025666687",
     priceRange: "$$$$",
-    currenciesAccepted: "USD, NGN, GBP, EUR",
+    currenciesAccepted: "NGN, USD, EUR, GBP",
     paymentAccepted: "Credit Card, Debit Card, Bank Transfer",
     amenityFeature: [
       { "@type": "LocationFeatureSpecification", name: "24/7 Uninterrupted Power", value: true },

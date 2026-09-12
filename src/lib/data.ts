@@ -8,7 +8,7 @@ export const BRAND_DETAILS = {
   shortLocation: "Ikoyi, Lagos",
   phone: "+2348025666687",
   whatsapp: "+2348025666687",
-  email: "concierge@magmercy.com",
+  email: "magmercy2026@gmail.com",
   socials: {
     instagram: "https://www.instagram.com/magmercy_apartment",
     facebook: "https://facebook.com/magmercyapartment",
