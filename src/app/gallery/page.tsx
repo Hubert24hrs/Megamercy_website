@@ -1,51 +1,66 @@
 "use client";
 
 import React, { useState } from "react";
-import { Sparkles, Eye, Maximize2 } from "lucide-react";
+import { Sparkles, Eye, Maximize2, ShieldCheck, Video } from "lucide-react";
+import VideoTourSection from "@/components/VideoTourSection";
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState("all");
 
   const images = [
     {
-      title: "Grand Living Pavilion",
+      title: "MagMercy Executive Suite & Living Pavilion",
+      category: "interior",
+      url: "/images/rooms/magmercy_real_1.jpeg",
+      isVerifiedReal: true,
+    },
+    {
+      title: "Grand Living Pavilion & Terrace",
       category: "interior",
       url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Sovereign Master En-Suite",
       category: "interior",
       url: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
-      title: "Diplomatic Suite & Desk",
+      title: "Diplomatic Suite & Workstation",
       category: "interior",
       url: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Calacatta Gold Chef's Kitchen",
       category: "interior",
       url: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Sunset Over Lagos Lagoon",
       category: "exterior",
       url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Penthouse Infinity Pool at Night",
       category: "wellness",
       url: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Nero Marquina Marble Soaking Tub",
       category: "interior",
       url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
     {
       title: "Private Horizon Balcony Loungers",
       category: "exterior",
       url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+      isVerifiedReal: false,
     },
   ];
 
@@ -53,7 +68,11 @@ export default function GalleryPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-24">
-      <div className="text-center max-w-3xl mx-auto space-y-4 pt-4">
+      {/* Real Video Walkthrough Section */}
+      <VideoTourSection />
+
+      {/* Photography Section */}
+      <div className="text-center max-w-3xl mx-auto space-y-4 pt-4 border-t border-charcoal-900/10">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-100 border border-bronze-400/30 text-xs font-mono tracking-widest text-bronze-700 uppercase font-semibold shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>CURATED 4K VISUAL ARCHIVES</span>
@@ -63,7 +82,7 @@ export default function GalleryPage() {
         </h1>
         <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
           High-definition photography capturing the subtle interplay of light, Italian craftsmanship,
-          and tranquil lagoon vistas at MagMercy.
+          and tranquil surroundings at 89 Lafiaji Street, Dolphin Estate, Ikoyi.
         </p>
 
         {/* Filter Buttons */}
@@ -76,6 +95,7 @@ export default function GalleryPage() {
           ].map((tab) => (
             <button
               key={tab.id}
+              type="button"
               onClick={() => setFilter(tab.id)}
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all ${
                 filter === tab.id
@@ -101,6 +121,14 @@ export default function GalleryPage() {
               alt={item.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
+
+            {item.isVerifiedReal && (
+              <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-700/90 text-white text-[10px] font-mono font-bold tracking-wider backdrop-blur-md shadow-md">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-300" />
+                <span>VERIFIED ON-SITE RESIDENCE</span>
+              </div>
+            )}
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
               <span className="text-[10px] font-mono text-bronze-300 uppercase tracking-widest font-semibold">
                 {item.category}

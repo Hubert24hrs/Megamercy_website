@@ -47,7 +47,7 @@ export default function LocationPage() {
                 <Navigation className="w-7 h-7" />
               </div>
               <h3 className="text-2xl font-serif font-bold text-charcoal-900">
-                Bourdillon Road, Ikoyi, Lagos
+                89 Lafiaji Street, Dolphin Estate, Ikoyi, Lagos
               </h3>
               <p className="text-xs text-charcoal-600 max-w-sm mx-auto">
                 Confidential gated community entrance coordinates dispatched to reserved guests.

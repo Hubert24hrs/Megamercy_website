@@ -83,7 +83,7 @@ export default function FourColumnBlurbs() {
             </h3>
             <p className="text-xs text-charcoal-600 leading-relaxed">
               Arrange private chef dinners on the waterfront deck, armored airport tarmac transit via the
-              Bourdillon corridor, or a sunset boat cruise along Five Cowries Creek.
+              Ikoyi corridor, or a sunset boat cruise along Five Cowries Creek.
             </p>
           </div>
           <div className="pt-6">

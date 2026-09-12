@@ -59,7 +59,7 @@ export default function RootLayout({
       "Ultra-premium futuristic short-let apartment in Ikoyi, Lagos, Nigeria offering diplomatic security and panoramic lagoon views.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Bourdillon Road",
+      streetAddress: "89 Lafiaji Street, Dolphin Estate",
       addressLocality: "Ikoyi",
       addressRegion: "Lagos",
       addressCountry: "NG",

@@ -48,7 +48,7 @@ export default function Footer() {
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
             </div>
             <h4 className="text-xl font-serif font-bold text-white">
-              Bourdillon Road, Ikoyi
+              89 Lafiaji Street, Dolphin Estate, Ikoyi
             </h4>
             <p className="text-xs text-pearl-400 leading-relaxed">
               Prime waterfront enclave overlooking Five Cowries Creek. 8 minutes to Victoria Island

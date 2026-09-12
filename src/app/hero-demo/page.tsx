@@ -19,7 +19,7 @@ export default function HeroDemoPage() {
         heroAlt="MagMercy Residence Architecture"
         bottomTitle="Engineered for"
         bottomTitleLine2="absolute peace."
-        bottomText="Triple-redundant power, German acoustic glazing, and 24/7 dedicated butler service on Bourdillon Road."
+        bottomText="Triple-redundant power, German acoustic glazing, and 24/7 dedicated butler service in Dolphin Estate, Ikoyi."
         animation="subtle"
       />
     </main>

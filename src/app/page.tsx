@@ -3,6 +3,7 @@ import Link from "next/link";
 import HeroScene from "@/components/3d/HeroScene";
 import VirtualTourCanvas from "@/components/3d/VirtualTourCanvas";
 import QuickSearchBar from "@/components/QuickSearchBar";
+import VideoTourSection from "@/components/VideoTourSection";
 import AlternatingFeatureSections from "@/components/AlternatingFeatureSections";
 import InteractiveUnitMap from "@/components/InteractiveUnitMap";
 import FourColumnBlurbs from "@/components/FourColumnBlurbs";
@@ -43,7 +44,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-black tracking-tight text-charcoal-900 leading-[1.1]">
-            A Private Penthouse on Bourdillon Road.{" "}
+            A Private Penthouse in Dolphin Estate, Ikoyi.{" "}
             <span className="text-coastal-blue italic font-normal block sm:inline">Overlooking Five Cowries Creek.</span>
           </h1>
 
@@ -97,8 +98,11 @@ export default function HomePage() {
         <HeroScene />
       </section>
 
-      {/* 2. HORIZONTAL QUICK SEARCH BOOKING BAR (Directly below Hero, inspired by Gulfstream) */}
+      {/* 2. HORIZONTAL QUICK SEARCH BOOKING BAR */}
       <QuickSearchBar />
+
+      {/* 3. REAL ON-SITE RESIDENCE VIDEO TOUR */}
+      <VideoTourSection />
 
       {/* 3. ALTERNATING 2-COLUMN STORY SECTIONS ("Relax & Enjoy!" & "Stay with Us!") */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -283,7 +287,7 @@ export default function HomePage() {
                 At the Center of Lagos's Diplomatic &amp; Financial Power
               </h2>
               <p className="text-xs sm:text-sm text-charcoal-600 leading-relaxed">
-                Positioned along the prestigious Bourdillon corridor, MagMercy provides direct,
+                Positioned in the prestigious Dolphin Estate enclave in Ikoyi, MagMercy provides direct,
                 controlled access to foreign embassies, private financial institutions, and established
                 dining on Lugard and Alexander avenues.
               </p>
@@ -332,7 +336,7 @@ export default function HomePage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h4 className="text-lg font-serif font-bold text-charcoal-900">
-                  Bourdillon Road, Ikoyi
+                  89 Lafiaji Street, Dolphin Estate, Ikoyi
                 </h4>
                 <p className="text-xs text-charcoal-600 max-w-xs mx-auto">
                   Precise villa access gate and private security briefing coordinates transmitted

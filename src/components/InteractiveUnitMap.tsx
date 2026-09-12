@@ -93,7 +93,7 @@ const UNITS_DATA: Record<string, UnitDetails> = {
     name: "Executive East Wing 504",
     floor: 5,
     viewType: "lagoon-partial",
-    viewLabel: "Lagoon Partial & Bourdillon Canopy",
+    viewLabel: "Lagoon Partial & Ikoyi Canopy",
     sqft: 1650,
     bedrooms: 2,
     bathrooms: 2,

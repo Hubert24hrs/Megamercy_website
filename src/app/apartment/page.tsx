@@ -1,6 +1,7 @@
 import React from "react";
 import VirtualTourCanvas from "@/components/3d/VirtualTourCanvas";
 import InteractiveFloorPlan from "@/components/InteractiveFloorPlan";
+import VideoTourSection from "@/components/VideoTourSection";
 import BookingWidget from "@/components/BookingWidget";
 import { ROOMS } from "@/lib/data";
 import { Sparkles, Maximize2, ShieldCheck, CheckCircle2, ChevronRight, Eye } from "lucide-react";
@@ -29,6 +30,9 @@ export default function ApartmentPage() {
           terrace overlooking the Lagos Lagoon.
         </p>
       </div>
+
+      {/* Real On-Site Cinematic Video Walkthrough */}
+      <VideoTourSection />
 
       {/* 3D Virtual Tour Canvas */}
       <section>
