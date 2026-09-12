@@ -42,12 +42,12 @@ export default function HomePage() {
             <span>WATERFRONT SHORT-LET RESIDENCE · IKOYI, LAGOS</span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-black tracking-tight text-charcoal-900 leading-[1.08]">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-black tracking-tight text-charcoal-900 leading-[1.1]">
             A Private Penthouse on Bourdillon Road.{" "}
             <span className="text-coastal-blue italic font-normal block sm:inline">Overlooking Five Cowries Creek.</span>
           </h1>
 
-          <p className="text-base sm:text-lg text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Overlooking the tranquil waters of Five Cowries Creek, MagMercy is an exclusive, privately held
             waterfront sanctuary in old Ikoyi. Finished 3.2-meter ceilings and German acoustic glazing seal out
             the city hum, backed by synchronized 150kVA power, heated infinity pool, private boat jetty,
@@ -55,10 +55,10 @@ export default function HomePage() {
           </p>
 
           {/* Primary Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
             <Link
               href="/booking"
-              className="px-8 py-4 rounded-2xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-sm uppercase tracking-wider shadow-lg shadow-coastal-blue/30 transition-all flex items-center gap-2 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-coastal-blue/30 transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 text-center"
             >
               <Calendar className="w-4 h-4" />
               <span>Check Availability &amp; Rates</span>
@@ -66,7 +66,7 @@ export default function HomePage() {
 
             <a
               href="#unit-map"
-              className="px-8 py-4 rounded-2xl bg-white hover:bg-sand-100 text-charcoal-800 text-sm font-mono uppercase tracking-wider transition-all flex items-center gap-2 border border-charcoal-900/15 shadow-md hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white hover:bg-sand-100 text-charcoal-800 text-xs sm:text-sm font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 border border-charcoal-900/15 shadow-md hover:-translate-y-0.5 text-center"
             >
               <Building className="w-4 h-4 text-coastal-blue" />
               <span>View Building &amp; Units Map</span>
@@ -74,19 +74,19 @@ export default function HomePage() {
           </div>
 
           {/* Live Telemetry Ticker */}
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-[11px] font-mono text-charcoal-600">
+          <div className="pt-3 flex flex-wrap items-center justify-center gap-2.5 sm:gap-6 text-[11px] font-mono text-charcoal-600">
             <span className="flex items-center gap-1.5 text-charcoal-800 font-semibold">
               <Zap className="w-3.5 h-3.5 text-amber-600" /> 100% UNINTERRUPTED POWER
             </span>
-            <span className="text-charcoal-900/20">|</span>
+            <span className="hidden sm:inline text-charcoal-900/20">|</span>
             <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
               <Lock className="w-3.5 h-3.5 text-emerald-600" /> KEYLESS BIOMETRICS
             </span>
-            <span className="text-charcoal-900/20">|</span>
+            <span className="hidden sm:inline text-charcoal-900/20">|</span>
             <span className="flex items-center gap-1.5 text-coastal-blue font-semibold">
               <Waves className="w-3.5 h-3.5 text-coastal-blue" /> PRIVATE BOAT JETTY
             </span>
-            <span className="text-charcoal-900/20">|</span>
+            <span className="hidden sm:inline text-charcoal-900/20">|</span>
             <span className="flex items-center gap-1.5 text-charcoal-800 font-semibold">
               <Wifi className="w-3.5 h-3.5 text-coastal-blue" /> 1GBPS FIBER
             </span>

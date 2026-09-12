@@ -35,10 +35,10 @@ export default function WhatsAppConcierge() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom,0px))] right-[calc(1rem+env(safe-area-inset-right,0px))] sm:bottom-6 sm:right-6 z-50 flex flex-col items-end">
       {/* Expanded Concierge Drawer */}
       {isOpen && (
-        <div className="mb-4 w-84 sm:w-96 rounded-3xl glass-panel bg-white/95 border border-bronze-400/30 p-5 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-bottom-5 duration-300">
+        <div className="mb-4 w-[calc(100vw-2rem)] sm:w-96 max-w-sm rounded-3xl glass-panel bg-white/98 border border-bronze-400/30 p-4 sm:p-5 shadow-2xl backdrop-blur-2xl animate-in slide-in-from-bottom-5 duration-300 max-h-[calc(100vh-120px)] overflow-y-auto">
           {/* Header */}
           <div className="flex items-center justify-between pb-3 border-b border-charcoal-900/10">
             <div className="flex items-center gap-3">

@@ -184,20 +184,26 @@ export default function InteractiveUnitMap() {
       {/* Main Map & Inspector Container */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left 7 Columns: The Interactive Map Elevation */}
-        <div className="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-7 border border-charcoal-900/15 shadow-xl relative overflow-hidden">
+        <div className="lg:col-span-7 bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-7 border border-charcoal-900/15 shadow-xl relative overflow-hidden">
           {/* Top Banner indicating Water Front Orientation */}
-          <div className="text-center py-2.5 px-4 mb-5 rounded-2xl bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy text-white text-xs font-serif font-bold uppercase tracking-widest shadow-md flex items-center justify-center gap-2">
-            <Waves className="w-4 h-4 text-coastal-teal" />
-            <span>FIVE COWRIES CREEK &amp; LAGONS WATERFRONT (SOUTH FACING)</span>
-            <Waves className="w-4 h-4 text-coastal-teal" />
+          <div className="text-center py-2 px-3 sm:py-2.5 sm:px-4 mb-4 sm:mb-5 rounded-xl sm:rounded-2xl bg-gradient-to-r from-coastal-navy via-coastal-blue to-coastal-navy text-white text-[10px] sm:text-xs font-serif font-bold uppercase tracking-widest shadow-md flex items-center justify-center gap-1.5 sm:gap-2">
+            <Waves className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-coastal-teal shrink-0" />
+            <span className="truncate">FIVE COWRIES CREEK &amp; LAGOON WATERFRONT (SOUTH FACING)</span>
+            <Waves className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-coastal-teal shrink-0" />
           </div>
 
-          {/* Elevation Floors Grid */}
-          <div className="space-y-2.5 text-xs font-mono">
-            {/* Floor 6 (Penthouses) */}
-            <div className="flex items-center gap-2">
-              <span className="w-8 font-bold text-charcoal-500 shrink-0 text-right">L6</span>
-              <div className="flex-1 grid grid-cols-6 gap-2">
+          {/* Swipe indicator for mobile phones */}
+          <div className="block lg:hidden text-[10px] font-mono text-charcoal-500 mb-2 text-center">
+            ← Swipe horizontally to view all unit numbers &amp; elevators →
+          </div>
+
+          {/* Elevation Floors Grid with horizontal scroll on small screens */}
+          <div className="overflow-x-auto -mx-1 px-1 sm:mx-0 sm:px-0 pb-2">
+            <div className="min-w-[480px] lg:min-w-0 space-y-2.5 text-xs font-mono">
+              {/* Floor 6 (Penthouses) */}
+              <div className="flex items-center gap-2">
+                <span className="w-8 font-bold text-charcoal-500 shrink-0 text-right">L6</span>
+                <div className="flex-1 grid grid-cols-6 gap-2">
                 <button
                   type="button"
                   onClick={() => setActiveUnitId("605")}
@@ -402,6 +408,7 @@ export default function InteractiveUnitMap() {
                 </div>
               </div>
             </div>
+          </div>
           </div>
 
           {/* Central Amenities Map Bar (Pool, Jacuzzi, Pickleball, Elevators) */}

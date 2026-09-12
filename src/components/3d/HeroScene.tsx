@@ -240,7 +240,7 @@ export default function HeroScene() {
   }, []);
 
   return (
-    <div className="relative w-full h-[640px] md:h-[760px] lg:h-[840px] overflow-hidden rounded-3xl bg-gradient-to-b from-sky-50/60 via-sand-50/80 to-sand-100 border border-bronze-400/25 shadow-xl">
+    <div className="relative w-full h-[460px] sm:h-[580px] md:h-[680px] lg:h-[780px] overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-b from-sky-50/60 via-sand-50/80 to-sand-100 border border-bronze-400/25 shadow-xl">
       {/* 3D Canvas Mount */}
       {isWebGLSupported ? (
         <div ref={containerRef} className="absolute inset-0 w-full h-full cursor-grab active:cursor-grabbing" />
@@ -261,65 +261,65 @@ export default function HeroScene() {
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-alabaster-100/40 via-transparent to-transparent" />
 
       {/* Top Telemetry & Viewport Switchers */}
-      <div className="absolute top-6 left-6 right-6 flex flex-wrap items-center justify-between gap-4 z-20 pointer-events-auto">
-        <div className="flex items-center gap-3 px-4 py-2 rounded-full glass-panel text-xs font-mono tracking-wider text-charcoal-800 font-semibold shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-          <span>3D SPATIAL MODEL · IKOYI PENTHOUSE RESIDENCE</span>
+      <div className="absolute top-3 left-3 right-3 sm:top-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-2 sm:gap-4 z-20 pointer-events-auto">
+        <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full glass-panel text-[10px] sm:text-xs font-mono tracking-wider text-charcoal-800 font-semibold shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+          <span className="truncate">3D SPATIAL MODEL · IKOYI PENTHOUSE</span>
         </div>
 
         {/* Camera Views */}
-        <div className="hidden sm:flex items-center gap-2 p-1.5 rounded-2xl glass-panel text-xs text-charcoal-700 shadow-sm">
+        <div className="flex items-center gap-1 sm:gap-2 p-1 rounded-xl sm:rounded-2xl glass-panel text-[10px] sm:text-xs text-charcoal-700 shadow-sm overflow-x-auto">
           <button
             onClick={() => setActiveView("aerial")}
-            className={`px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all flex items-center gap-1 sm:gap-1.5 shrink-0 ${
               activeView === "aerial"
                 ? "bg-bronze-500 text-white font-bold shadow-md shadow-bronze-500/20"
                 : "hover:text-bronze-600"
             }`}
           >
-            <Compass className="w-3.5 h-3.5" />
-            <span>Aerial Vista</span>
+            <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Aerial</span>
           </button>
           <button
             onClick={() => setActiveView("penthouse")}
-            className={`px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all flex items-center gap-1 sm:gap-1.5 shrink-0 ${
               activeView === "penthouse"
                 ? "bg-bronze-500 text-white font-bold shadow-md shadow-bronze-500/20"
                 : "hover:text-bronze-600"
             }`}
           >
-            <Eye className="w-3.5 h-3.5" />
-            <span>Penthouse Core</span>
+            <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Core</span>
           </button>
           <button
             onClick={() => setActiveView("horizon")}
-            className={`px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
+            className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl transition-all flex items-center gap-1 sm:gap-1.5 shrink-0 ${
               activeView === "horizon"
                 ? "bg-bronze-500 text-white font-bold shadow-md shadow-bronze-500/20"
                 : "hover:text-bronze-600"
             }`}
           >
-            <Shield className="w-3.5 h-3.5" />
-            <span>Fortress Perimeter</span>
+            <Shield className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Perimeter</span>
           </button>
         </div>
       </div>
 
       {/* Bottom Floating Hotspot HUD */}
-      <div className="absolute bottom-6 left-6 right-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-4 z-20 pointer-events-none">
-        <div className="p-5 rounded-2xl glass-panel max-w-md pointer-events-auto backdrop-blur-xl border border-bronze-400/30 shadow-lg">
-          <div className="flex items-center gap-2 text-xs font-mono text-bronze-600 mb-1 font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-bronze-500" />
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col md:flex-row items-start md:items-end justify-between gap-2 sm:gap-4 z-20 pointer-events-none">
+        <div className="p-3.5 sm:p-5 rounded-2xl glass-panel max-w-md pointer-events-auto backdrop-blur-xl border border-bronze-400/30 shadow-lg">
+          <div className="flex items-center gap-1.5 text-[10px] sm:text-xs font-mono text-bronze-600 mb-0.5 sm:mb-1 font-semibold">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-bronze-500" />
             <span>SPATIAL HIGHLIGHT</span>
           </div>
-          <h4 className="text-lg font-serif font-bold text-charcoal-900">
+          <h4 className="text-sm sm:text-lg font-serif font-bold text-charcoal-900">
             {activeView === "aerial" && "Cantilevered Penthouse Terrace"}
             {activeView === "penthouse" && "Acoustic Living Pavilion"}
             {activeView === "horizon" && "Diplomatic Perimeter & Lagoon"}
           </h4>
-          <p className="text-xs text-charcoal-600 mt-1 leading-relaxed">
+          <p className="text-[11px] sm:text-xs text-charcoal-600 mt-1 leading-relaxed line-clamp-2 sm:line-clamp-none">
             {activeView === "aerial" &&
-              "Direct transition between interior living volume and the private open-air terrace overlooking Five Cowries Creek, the Bourdillon corridor, and the Atlantic horizon."}
+              "Direct transition between interior living volume and the private open-air terrace overlooking Five Cowries Creek and the Atlantic horizon."}
             {activeView === "penthouse" &&
               "Triple-glazed acoustic shielding, Bang & Olufsen spatial audio matrix, and custom Italian marble millwork."}
             {activeView === "horizon" &&
@@ -327,10 +327,10 @@ export default function HeroScene() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 pointer-events-auto">
-          <div className="px-4 py-2.5 rounded-2xl glass-panel-emerald text-xs font-mono text-emerald-800 font-semibold flex items-center gap-2 shadow-sm">
+        <div className="hidden sm:flex items-center gap-3 pointer-events-auto">
+          <div className="px-3 sm:px-4 py-1.5 sm:py-2.5 rounded-xl sm:rounded-2xl glass-panel-emerald text-[10px] sm:text-xs font-mono text-emerald-800 font-semibold flex items-center gap-2 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>FPS: 60 · REALTIME SHADERS</span>
+            <span>FPS: 60 · REALTIME</span>
           </div>
         </div>
       </div>

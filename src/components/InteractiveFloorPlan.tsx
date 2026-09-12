@@ -93,57 +93,57 @@ export default function InteractiveFloorPlan() {
 
       {/* SVG-Style Architectural Blueprint Visualizer */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
-        <div className="lg:col-span-2 relative aspect-[4/3] rounded-2xl bg-sand-50 border border-charcoal-900/10 p-6 flex flex-col justify-between overflow-hidden subtle-noise shadow-inner">
+        <div className="lg:col-span-2 relative min-h-[460px] sm:min-h-0 sm:aspect-[4/3] rounded-2xl bg-sand-50 border border-charcoal-900/10 p-3.5 sm:p-6 flex flex-col justify-between overflow-hidden subtle-noise shadow-inner">
           {/* Compass Rose */}
-          <div className="absolute top-4 right-4 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 border border-charcoal-900/10 text-[10px] font-mono text-charcoal-700 shadow-sm">
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-white/90 border border-charcoal-900/10 text-[9px] sm:text-[10px] font-mono text-charcoal-700 shadow-sm z-10">
             <Compass className="w-3 h-3 text-bronze-600 animate-spin" style={{ animationDuration: "20s" }} />
             <span>FACING: NW (LAGOS LAGOON)</span>
           </div>
 
           {/* Interactive Schematic Diagram Box */}
-          <div className="w-full h-full grid grid-cols-6 grid-rows-4 gap-3 my-auto pt-6">
+          <div className="w-full h-full grid grid-cols-6 grid-rows-4 gap-2 sm:gap-3 my-auto pt-8 sm:pt-6">
             {/* Zone: Living Pavilion (Large) */}
             <div
               onClick={() => setSelectedZone("living")}
-              className={`col-span-4 row-span-2 rounded-xl p-4 border-2 transition-all cursor-pointer flex flex-col justify-between ${
+              className={`col-span-4 row-span-2 rounded-xl p-2.5 sm:p-4 border-2 transition-all cursor-pointer flex flex-col justify-between ${
                 selectedZone === "living"
                   ? "border-bronze-500 bg-bronze-500/15 shadow-md shadow-bronze-500/10"
                   : "border-charcoal-900/10 bg-white/80 hover:border-bronze-400/50 hover:bg-white"
               }`}
             >
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <span className="text-xs font-serif font-bold text-charcoal-900">
-                  Grand Living Pavilion &amp; Terrace
+                  Grand Living Pavilion
                 </span>
                 <span className="text-[10px] font-mono text-bronze-600 font-semibold">1,200 SQ.FT</span>
               </div>
-              <div className="flex items-center gap-2 text-[10px] text-charcoal-600">
-                <span className="w-2 h-2 rounded-full bg-bronze-500" />
-                <span>Double Acoustic Glazing · Panoramic Horizon</span>
+              <div className="flex items-center gap-1.5 text-[9px] sm:text-[10px] text-charcoal-600">
+                <span className="w-1.5 h-1.5 rounded-full bg-bronze-500 shrink-0" />
+                <span className="truncate">Double Acoustic Glazing · Panoramic</span>
               </div>
             </div>
 
             {/* Zone: Master Haven */}
             <div
               onClick={() => setSelectedZone("master")}
-              className={`col-span-2 row-span-4 rounded-xl p-4 border-2 transition-all cursor-pointer flex flex-col justify-between ${
+              className={`col-span-2 row-span-4 rounded-xl p-2.5 sm:p-4 border-2 transition-all cursor-pointer flex flex-col justify-between ${
                 selectedZone === "master"
                   ? "border-emerald-600 bg-emerald-500/15 shadow-md shadow-emerald-500/10"
                   : "border-charcoal-900/10 bg-white/80 hover:border-emerald-500/50 hover:bg-white"
               }`}
             >
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-0.5">
                 <span className="text-xs font-serif font-bold text-charcoal-900">
-                  Sovereign Master Haven
+                  Master Haven
                 </span>
                 <span className="text-[10px] font-mono text-emerald-700 font-semibold">950 SQ.FT</span>
               </div>
-              <div className="space-y-1 text-[10px] text-charcoal-600">
-                <p>• Super King Bed</p>
-                <p>• Marble Soaking Tub</p>
-                <p>• Dressing Lounge</p>
+              <div className="space-y-0.5 text-[9px] sm:text-[10px] text-charcoal-600">
+                <p>• Super King</p>
+                <p>• Soaking Tub</p>
+                <p>• Dressing Rm</p>
               </div>
-              <div className="pt-2 border-t border-charcoal-900/5 text-[9px] font-mono text-emerald-700 font-semibold">
+              <div className="pt-1.5 border-t border-charcoal-900/5 text-[9px] font-mono text-emerald-700 font-semibold truncate">
                 ACOUSTIC COCOON
               </div>
             </div>

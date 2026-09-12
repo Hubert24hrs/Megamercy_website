@@ -1,8 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppConcierge from "@/components/WhatsAppConcierge";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#FAF8F5",
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",

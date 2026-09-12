@@ -100,27 +100,27 @@ export default function Footer() {
                 ✓ You have successfully subscribed to the dispatch.
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="space-y-2">
+              <form onSubmit={handleSubscribe} className="space-y-2.5">
                 <input
                   type="text"
                   placeholder="Your Name"
                   value={subscribeName}
                   onChange={(e) => setSubscribeName(e.target.value)}
-                  className="w-full px-3.5 py-2 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-pearl-400 focus:outline-none focus:border-coastal-blue"
+                  className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-pearl-400 focus:outline-none focus:border-coastal-blue"
                   required
                 />
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input
                     type="email"
                     placeholder="Official Email"
                     value={subscribeEmail}
                     onChange={(e) => setSubscribeEmail(e.target.value)}
-                    className="w-full px-3.5 py-2 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-pearl-400 focus:outline-none focus:border-coastal-blue"
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-white/10 border border-white/15 text-xs text-white placeholder-pearl-400 focus:outline-none focus:border-coastal-blue"
                     required
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded-xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs uppercase tracking-wider shrink-0 transition-all shadow-md shadow-coastal-blue/20"
+                    className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs uppercase tracking-wider shrink-0 transition-all shadow-md shadow-coastal-blue/20 text-center"
                   >
                     Subscribe
                   </button>
@@ -297,8 +297,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-pearl-500">
-          <div className="flex items-center gap-4 flex-wrap">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-pearl-500 pt-6 border-t border-white/10">
+          <div className="flex items-center justify-center md:justify-start gap-4 flex-wrap">
             <div className="flex items-center gap-1.5 text-emerald-400 font-medium">
               <ShieldCheck className="w-4 h-4" />
               <span>NDPR &amp; GDPR VERIFIED</span>
@@ -309,7 +309,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center gap-6 flex-wrap">
+          <div className="flex items-center justify-center md:justify-end gap-4 sm:gap-6 flex-wrap text-center md:text-right">
             <Link href="/legal" className="hover:text-white transition-colors">
               Privacy Notice
             </Link>
@@ -319,7 +319,7 @@ export default function Footer() {
             <Link href="/legal" className="hover:text-white transition-colors">
               House Rules
             </Link>
-            <span>© {new Date().getFullYear()} MagMercy Apartment. All Rights Reserved.</span>
+            <span className="w-full sm:w-auto">© {new Date().getFullYear()} MagMercy Apartment. All Rights Reserved.</span>
           </div>
         </div>
       </div>
