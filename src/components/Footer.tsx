@@ -292,6 +292,15 @@ export default function Footer() {
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </li>
+              <li className="pt-1">
+                <Link
+                  href="/admin/calendar"
+                  className="inline-flex items-center gap-1.5 text-[11px] font-mono text-bronze-300 hover:text-white transition-colors"
+                >
+                  <span>PMS &amp; Channel Sync (Airbnb / Booking.com)</span>
+                  <ArrowUpRight className="w-3 h-3 text-coastal-blue" />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
