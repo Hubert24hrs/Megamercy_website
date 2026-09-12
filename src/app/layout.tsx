@@ -56,7 +56,7 @@ export default function RootLayout({
       addressRegion: "Lagos",
       addressCountry: "NG",
     },
-    telephone: "+2348140007890",
+    telephone: "+2348025666687",
     priceRange: "$$$$",
     currenciesAccepted: "USD, NGN, GBP, EUR",
     paymentAccepted: "Credit Card, Debit Card, Bank Transfer",

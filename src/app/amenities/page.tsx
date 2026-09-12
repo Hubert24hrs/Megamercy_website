@@ -102,7 +102,7 @@ export default function AmenitiesPage() {
           </p>
           <div className="pt-2">
             <a
-              href="https://wa.me/2348140007890?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20bespoke%20VIP%20services%20for%20an%20upcoming%20stay."
+              href="https://wa.me/2348025666687?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20bespoke%20VIP%20services%20for%20an%20upcoming%20stay."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-bronze-500 text-white font-bold text-xs uppercase tracking-wider hover:bg-bronze-600 transition-colors shadow-md shadow-bronze-500/20"

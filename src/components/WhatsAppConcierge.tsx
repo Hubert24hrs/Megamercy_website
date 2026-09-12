@@ -31,7 +31,7 @@ export default function WhatsAppConcierge() {
       customText ||
         "Hello MagMercy Concierge, I would like to inquire about reserving the Ikoyi penthouse."
     );
-    window.open(`https://wa.me/2348140007890?text=${message}`, "_blank");
+    window.open(`https://wa.me/2348025666687?text=${message}`, "_blank");
   };
 
   return (
