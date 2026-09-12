@@ -26,6 +26,7 @@ export interface RoomSpec {
   bedType: string;
   keyFeatures: string[];
   imageUrl: string;
+  videoUrl?: string;
   panoramaUrl?: string;
 }
 

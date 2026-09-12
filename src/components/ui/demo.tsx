@@ -8,7 +8,7 @@ export default function Default() {
       description="A private 3,400 sq.ft penthouse engineered for visiting dignitaries, diplomatic delegations, and executive boards."
       searchPlaceholder="Search suites, amenities, or security protocols..."
       searchButtonText="Explore"
-      heroImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+      heroImage="/images/rooms/magmercy_real_1.jpeg"
       heroAlt="MagMercy Residence Architecture"
       bottomTitle="Engineered for"
       bottomTitleLine2="absolute peace."

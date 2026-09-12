@@ -75,6 +75,7 @@ export default function Navbar({
 
   const navLinks = [
     { label: "The Apartment", href: "/apartment" },
+    { label: "Cinema Vault", href: "/gallery" },
     { label: "Amenities", href: "/amenities" },
     { label: "Security", href: "/security" },
     { label: "Location", href: "/location" },

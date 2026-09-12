@@ -221,7 +221,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/gallery" className="hover:text-white transition-colors">
-                  4K Visual Gallery
+                  4K Cinema &amp; Video Vault
                 </Link>
               </li>
             </ul>

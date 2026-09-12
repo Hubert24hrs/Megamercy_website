@@ -50,7 +50,8 @@ export const ROOMS: RoomSpec[] = [
       "Circadian rhythmic lighting system for jetlag recovery",
       "Private balcony overlooking Ikoyi tree canopies",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/rooms/magmercy_real_1.jpeg",
+    videoUrl: "/videos/magmercy_tour_1.mp4",
   },
   {
     id: "diplomatic-suite",
@@ -67,7 +68,8 @@ export const ROOMS: RoomSpec[] = [
       "Ultra-quiet Daikin VRV climate zone control",
       "Nespresso Vertuo coffee bar & minibar",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/rooms/magmercy_real_1.jpeg",
+    videoUrl: "/videos/magmercy_tour_2.mp4",
   },
   {
     id: "culinary-suite",
@@ -84,7 +86,8 @@ export const ROOMS: RoomSpec[] = [
       "Reverse osmosis alkaline water filtration on tap",
       "Discreet butler pantry with secondary service entrance",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&w=1600&q=80",
+    imageUrl: "/images/rooms/magmercy_real_1.jpeg",
+    videoUrl: "/videos/magmercy_tour_4.mp4",
   },
 ];
 

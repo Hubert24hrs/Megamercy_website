@@ -250,7 +250,7 @@ export default function HeroScene() {
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85')",
+              "url('/images/rooms/magmercy_real_1.jpeg')",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-t from-alabaster-100 via-transparent to-transparent" />

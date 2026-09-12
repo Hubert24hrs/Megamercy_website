@@ -53,12 +53,24 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-bronze-400/30 shadow-xl">
-          <img
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-            alt="MagMercy Architecture"
+        <div className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-gold-500/30 shadow-2xl bg-charcoal-950 group">
+          <video
+            src="/videos/magmercy_tour_1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
+          <div className="absolute top-4 left-4 z-10 flex items-center gap-1.5 px-3 py-1 rounded-full bg-charcoal-950/80 border border-gold-500/40 text-gold-400 text-[10px] font-mono font-bold tracking-wider backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+            <span>REAL RESIDENCE FOOTAGE · 89 LAFIAJI ST</span>
+          </div>
+          <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white text-[11px] font-mono">
+            <span className="bg-black/60 px-2.5 py-1 rounded-md border border-white/10">Dolphin Estate, Ikoyi</span>
+            <span className="bg-emerald-700/80 px-2.5 py-1 rounded-md text-emerald-200 font-bold">100% Verified</span>
+          </div>
         </div>
       </div>
 

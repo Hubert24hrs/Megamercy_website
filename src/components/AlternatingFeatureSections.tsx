@@ -21,12 +21,19 @@ export default function AlternatingFeatureSections() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         {/* Left Column: Coastal Waterfront Pool Visual */}
         <div className="relative group">
-          <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-sand-100">
-            <img
-              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=80"
-              alt="MagMercy Heated Pool and Waterfront Deck in Ikoyi"
+          <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-charcoal-950 relative">
+            <video
+              src="/videos/magmercy_tour_2.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
+            <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-charcoal-900/80 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>LIVE TOUR · EXECUTIVE LIVING PAVILION</span>
+            </div>
           </div>
           {/* Floating Glass Badge */}
           <div className="hidden sm:block absolute -bottom-6 -right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-charcoal-900/15 shadow-xl max-w-xs">
@@ -163,12 +170,19 @@ export default function AlternatingFeatureSections() {
 
         {/* Right Column: Interior Penthouse Living Visual */}
         <div className="relative group order-1 lg:order-2">
-          <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-sand-100">
-            <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-              alt="MagMercy Luxury Living Room and Private Balcony"
+          <div className="rounded-3xl overflow-hidden border border-charcoal-900/15 shadow-2xl aspect-[4/3] bg-charcoal-950 relative">
+            <video
+              src="/videos/magmercy_tour_3.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
             />
+            <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-charcoal-900/80 backdrop-blur-md border border-white/15 text-[10px] font-mono text-white font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>LIVE TOUR · SOVEREIGN HAVEN</span>
+            </div>
           </div>
           {/* Floating Glass Badge */}
           <div className="hidden sm:block absolute -bottom-6 -left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-charcoal-900/15 shadow-xl max-w-xs">

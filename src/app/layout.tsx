@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Ikoyi penthouse short let",
     "Diplomatic apartment Lagos",
     "Executive apartment Ikoyi",
-    "3D virtual tour Lagos apartment",
+    "4K cinematic video walkthrough Lagos apartment",
     "Secure short let Nigeria",
   ],
   authors: [{ name: "MagMercy Hospitality" }],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "MagMercy Apartment",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
+        url: "/images/rooms/magmercy_real_1.jpeg",
         width: 1200,
         height: 630,
         alt: "MagMercy Luxury Penthouse Ikoyi Lagos",

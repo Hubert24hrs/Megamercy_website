@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import HeroScene from "@/components/3d/HeroScene";
-import VirtualTourCanvas from "@/components/3d/VirtualTourCanvas";
+import CinematicHero from "@/components/CinematicHero";
 import QuickSearchBar from "@/components/QuickSearchBar";
-import VideoTourSection from "@/components/VideoTourSection";
+import VideoReelsShowcase from "@/components/VideoReelsShowcase";
 import AlternatingFeatureSections from "@/components/AlternatingFeatureSections";
 import InteractiveUnitMap from "@/components/InteractiveUnitMap";
 import FourColumnBlurbs from "@/components/FourColumnBlurbs";
@@ -29,87 +28,29 @@ import {
   Coffee,
   Car,
   Building,
+  Video,
 } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="space-y-20 lg:space-y-32 pb-20">
-      {/* 1. HERO SECTION WITH PROMINENT COASTAL HEADLINE */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        {/* Top Text & Headline */}
-        <div className="text-center max-w-4xl mx-auto space-y-6 mb-8">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-sand-100 border border-charcoal-900/15 text-xs font-mono tracking-widest text-coastal-blue uppercase shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>WATERFRONT SHORT-LET RESIDENCE · IKOYI, LAGOS</span>
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-serif font-black tracking-tight text-charcoal-900 leading-[1.1]">
-            A Private Penthouse in Dolphin Estate, Ikoyi.{" "}
-            <span className="text-coastal-blue italic font-normal block sm:inline">Overlooking Five Cowries Creek.</span>
-          </h1>
-
-          <p className="text-sm sm:text-base lg:text-lg text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
-            Overlooking the tranquil waters of Five Cowries Creek, MagMercy is an exclusive, privately held
-            waterfront sanctuary in old Ikoyi. Finished 3.2-meter ceilings and German acoustic glazing seal out
-            the city hum, backed by synchronized 150kVA power, heated infinity pool, private boat jetty,
-            and an on-site armed police detail.
-          </p>
-
-          {/* Primary Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full max-w-md sm:max-w-none mx-auto">
-            <Link
-              href="/booking"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-coastal-blue hover:bg-coastal-blue-hover text-white font-serif font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-coastal-blue/30 transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5 text-center"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Check Availability &amp; Rates</span>
-            </Link>
-
-            <a
-              href="#unit-map"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-white hover:bg-sand-100 text-charcoal-800 text-xs sm:text-sm font-mono uppercase tracking-wider transition-all flex items-center justify-center gap-2 border border-charcoal-900/15 shadow-md hover:-translate-y-0.5 text-center"
-            >
-              <Building className="w-4 h-4 text-coastal-blue" />
-              <span>View Building &amp; Units Map</span>
-            </a>
-          </div>
-
-          {/* Live Telemetry Ticker */}
-          <div className="pt-3 flex flex-wrap items-center justify-center gap-2.5 sm:gap-6 text-[11px] font-mono text-charcoal-600">
-            <span className="flex items-center gap-1.5 text-charcoal-800 font-semibold">
-              <Zap className="w-3.5 h-3.5 text-amber-600" /> 100% UNINTERRUPTED POWER
-            </span>
-            <span className="hidden sm:inline text-charcoal-900/20">|</span>
-            <span className="flex items-center gap-1.5 text-emerald-700 font-semibold">
-              <Lock className="w-3.5 h-3.5 text-emerald-600" /> KEYLESS BIOMETRICS
-            </span>
-            <span className="hidden sm:inline text-charcoal-900/20">|</span>
-            <span className="flex items-center gap-1.5 text-coastal-blue font-semibold">
-              <Waves className="w-3.5 h-3.5 text-coastal-blue" /> PRIVATE BOAT JETTY
-            </span>
-            <span className="hidden sm:inline text-charcoal-900/20">|</span>
-            <span className="flex items-center gap-1.5 text-charcoal-800 font-semibold">
-              <Wifi className="w-3.5 h-3.5 text-coastal-blue" /> 1GBPS FIBER
-            </span>
-          </div>
-        </div>
-
-        {/* 3D WebGL Hero Canvas Scene */}
-        <HeroScene />
+    <div className="space-y-16 lg:space-y-24 pb-20">
+      {/* 1. CINEMATIC REAL VIDEO HERO (Replaces Three.js 3D box) */}
+      <section className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 pt-2">
+        <CinematicHero />
       </section>
 
       {/* 2. HORIZONTAL QUICK SEARCH BOOKING BAR */}
       <QuickSearchBar />
 
-      {/* 3. REAL ON-SITE RESIDENCE VIDEO TOUR */}
-      <VideoTourSection />
+      {/* 3. UNFILTERED SUITE-BY-SUITE REAL VIDEO REELS SHOWCASE */}
+      <VideoReelsShowcase />
 
-      {/* 3. ALTERNATING 2-COLUMN STORY SECTIONS ("Relax & Enjoy!" & "Stay with Us!") */}
+      {/* 4. ALTERNATING REAL PROPERTY STORY SECTIONS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AlternatingFeatureSections />
       </section>
 
-      {/* 4. INTERACTIVE CONDO UNIT MAP & ELEVATION (Inspired by Gulfstream Interactive Unit Map) */}
+      {/* 5. INTERACTIVE CONDO UNIT MAP & ELEVATION */}
       <section id="unit-map" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
         <InteractiveUnitMap />
       </section>
@@ -117,12 +58,12 @@ export default function HomePage() {
       {/* Wave Decorative Divider */}
       <div className="coastal-wave-divider opacity-50" />
 
-      {/* 5. 4-COLUMN QUICK ACTION BLURBS (Inspired by Gulfstream 4-column callouts) */}
+      {/* 6. 4-COLUMN QUICK ACTION BLURBS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FourColumnBlurbs />
       </section>
 
-      {/* 6. BRAND NARRATIVE & PHILOSOPHY */}
+      {/* 7. BRAND NARRATIVE & REAL ON-SITE ARCHITECTURE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -132,46 +73,41 @@ export default function HomePage() {
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-serif font-black text-charcoal-900 leading-tight">
-              A Private Sanctuary Built for Those Who Shape the World
+              An Architectural Cocoon of Total Sovereignty
             </h2>
 
             <p className="text-sm sm:text-base text-charcoal-600 leading-relaxed">
-              In a metropolis as dynamic and pulsating as Lagos, true luxury is the rare luxury of
-              serene quiet, total confidentiality, and effortless continuity. MagMercy was
-              conceived from the ground up for dignitaries, multinational founders, and discerning
-              families who refuse compromise.
+              Conceived as a safe harbor for international travelers, diplomats, and corporate
+              principals visiting Lagos. Every detail at MagMercy is calibrated for absolute peace of mind:
+              uncompromised acoustic silence, 100% redundant electrical power, and intuitive smart-home living.
             </p>
 
-            <p className="text-sm sm:text-base text-charcoal-500 leading-relaxed">
-              Every detail has been curated with forensic precision: triple-glazed acoustic window
-              assemblies that hush the Ikoyi city hum, custom Italian millwork, a private chef's
-              culinary suite, and an uninterruptible dual-backup power system guaranteeing that your
-              work and restorative rest never stutter.
-            </p>
-
-            <div className="pt-4 grid grid-cols-2 gap-4">
-              <div className="p-4 rounded-2xl bg-sand-50 border border-charcoal-900/10 shadow-sm">
-                <span className="text-2xl font-serif font-bold text-coastal-blue block">
-                  3,400 SQ.FT
-                </span>
-                <span className="text-xs text-charcoal-600 font-mono mt-1 block">
-                  EXPANSIVE PENTHOUSE LIVING
-                </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div className="p-5 rounded-2xl bg-white border border-charcoal-900/10 shadow-sm space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-sand-100 flex items-center justify-center text-bronze-600 mb-3">
+                  <Lock className="w-5 h-5" />
+                </div>
+                <h4 className="font-serif font-bold text-charcoal-900 text-base">Keyless Autonomy</h4>
+                <p className="text-xs text-charcoal-600 leading-relaxed">
+                  Encrypted biometric entry and temporary digital keys dispatched to your phone before arrival.
+                </p>
               </div>
-              <div className="p-4 rounded-2xl bg-sand-50 border border-charcoal-900/10 shadow-sm">
-                <span className="text-2xl font-serif font-bold text-emerald-700 block">
-                  ZERO FLICKER
-                </span>
-                <span className="text-xs text-charcoal-600 font-mono mt-1 block">
-                  DUAL 150kVA SYNCHRONIZED POWER
-                </span>
+
+              <div className="p-5 rounded-2xl bg-white border border-charcoal-900/10 shadow-sm space-y-2">
+                <div className="w-10 h-10 rounded-xl bg-sand-100 flex items-center justify-center text-coastal-blue mb-3">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <h4 className="font-serif font-bold text-charcoal-900 text-base">Triple Power Grid</h4>
+                <p className="text-xs text-charcoal-600 leading-relaxed">
+                  Synchronized twin 150kVA generators with automated ATS and lithium solar backup.
+                </p>
               </div>
             </div>
 
             <div className="pt-2">
               <Link
                 href="/about"
-                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-coastal-blue hover:text-coastal-blue-hover transition-colors font-bold"
+                className="inline-flex items-center gap-2 text-xs font-mono text-coastal-blue hover:text-coastal-blue-hover uppercase tracking-wider font-bold transition-colors"
               >
                 <span>Read Full Architectural Narrative</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -179,30 +115,29 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Luxury Imagery Collage */}
+          {/* Real On-Site Verified Imagery */}
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-charcoal-900/15 shadow-xl">
+            <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-charcoal-900/15 shadow-xl relative bg-charcoal-950">
               <img
-                src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
-                alt="MagMercy Living Pavilion"
+                src="/images/rooms/magmercy_real_1.jpeg"
+                alt="MagMercy Real Penthouse Suite in Dolphin Estate"
                 className="w-full h-full object-cover"
               />
+              <div className="absolute top-4 left-4 z-10 px-3 py-1.5 rounded-full bg-emerald-800/90 text-white text-[10px] font-mono font-bold tracking-wider backdrop-blur-md shadow-md flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-300" />
+                <span>VERIFIED ON-SITE RESIDENCE PHOTO</span>
+              </div>
             </div>
-            <div className="hidden sm:block absolute -bottom-8 -left-8 w-64 rounded-2xl bg-white/95 p-4 border border-charcoal-900/15 shadow-xl backdrop-blur-xl">
+            <div className="hidden sm:block absolute -bottom-8 -left-8 w-72 rounded-2xl bg-white/95 p-4 border border-charcoal-900/15 shadow-xl backdrop-blur-xl">
               <span className="text-[10px] font-mono text-coastal-blue uppercase block font-bold">
-                IKOYI WATERFRONT
+                89 LAFIAJI STREET, DOLPHIN ESTATE
               </span>
               <p className="text-xs font-serif font-bold text-charcoal-900 mt-1">
-                Unobstructed Sunset Views Over Five Cowries Creek
+                Acoustic Double-Glazing &amp; Poliform Furnishings in Old Ikoyi
               </p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* 7. 3D VIRTUAL TOUR SECTION */}
-      <section id="tour" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
-        <VirtualTourCanvas />
       </section>
 
       {/* 8. AMENITIES & SIGNATURE PROVISIONS */}

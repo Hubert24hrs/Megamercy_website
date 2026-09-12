@@ -532,7 +532,7 @@ export default function InteractiveUnitMap() {
               href="/apartment"
               className="w-full py-3 px-6 rounded-2xl bg-white border border-charcoal-900/15 hover:border-coastal-blue text-charcoal-800 font-mono text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 font-semibold shadow-sm"
             >
-              <span>View Full 3D Walkthrough</span>
+              <span>View 4K Video Walkthrough</span>
               <ChevronRight className="w-3.5 h-3.5 text-charcoal-500" />
             </Link>
           </div>

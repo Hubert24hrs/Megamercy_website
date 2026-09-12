@@ -1,0 +1,68 @@
+{
+  "feeds": [
+    {
+      "id": "airbnb-primary",
+      "platform": "airbnb",
+      "name": "Airbnb MagMercy Penthouse Listing",
+      "url": "",
+      "suiteId": "penthouse",
+      "active": true,
+      "lastSync": "2026-09-12T19:45:28.884Z",
+      "lastStatus": "success",
+      "eventsImported": 1
+    },
+    {
+      "id": "booking-primary",
+      "platform": "booking_com",
+      "name": "Booking.com Ikoyi Residence",
+      "url": "",
+      "suiteId": "penthouse",
+      "active": true,
+      "lastSync": "2026-09-12T19:45:28.884Z",
+      "lastStatus": "success",
+      "eventsImported": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "airbnb-demo-1",
+      "uid": "airbnb-2026-demo-oct",
+      "summary": "Airbnb Reserved (Diplomatic Guest)",
+      "description": "Imported via Airbnb iCal Calendar Sync",
+      "startDate": "2026-09-16",
+      "endDate": "2026-09-19",
+      "source": "airbnb",
+      "status": "confirmed",
+      "suiteId": "penthouse",
+      "createdAt": "2026-09-12T19:45:28.884Z",
+      "updatedAt": "2026-09-12T19:45:28.884Z"
+    },
+    {
+      "id": "booking-demo-1",
+      "uid": "bcom-2026-demo-oct",
+      "summary": "Booking.com Reserved (Executive Board)",
+      "description": "Imported via Booking.com iCal Calendar Sync",
+      "startDate": "2026-09-24",
+      "endDate": "2026-09-28",
+      "source": "booking_com",
+      "status": "confirmed",
+      "suiteId": "penthouse",
+      "createdAt": "2026-09-12T19:45:28.884Z",
+      "updatedAt": "2026-09-12T19:45:28.884Z"
+    },
+    {
+      "id": "direct-demo-1",
+      "uid": "direct-vip-2026-1",
+      "summary": "Direct VIP Penthouse Stay",
+      "description": "Booked via direct MagMercy luxury reservation portal",
+      "startDate": "2026-10-02",
+      "endDate": "2026-10-06",
+      "source": "direct",
+      "status": "confirmed",
+      "suiteId": "penthouse",
+      "guestName": "Ambassadorial Delegation",
+      "createdAt": "2026-09-12T19:45:28.884Z",
+      "updatedAt": "2026-09-12T19:45:28.884Z"
+    }
+  ]
+}
