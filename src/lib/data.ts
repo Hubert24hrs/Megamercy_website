@@ -13,9 +13,7 @@ export const BRAND_DETAILS = {
     instagram: "https://www.instagram.com/magmercy_apartment",
     facebook: "https://facebook.com/magmercyapartment",
     tiktok: "https://vm.tiktok.com/ZS9SQfedo91rX-KKVUd/",
-    twitter: "https://x.com/magmercylagos",
     whatsapp: "https://wa.me/2348025666687?text=Hello%20MagMercy%20Concierge%2C%20I%20would%20like%20to%20inquire%20about%20reserving%20the%20penthouse.",
-    youtube: "https://youtube.com/@magmercyapartment",
   },
 };
 

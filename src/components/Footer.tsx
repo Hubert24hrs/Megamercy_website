@@ -10,8 +10,6 @@ import {
   MapPin,
   Instagram,
   Facebook,
-  Twitter,
-  Youtube,
   Send,
   Lock,
   Sun,
@@ -173,24 +171,6 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={BRAND_DETAILS.socials.twitter}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-coastal-blue hover:text-white transition-all"
-                aria-label="Twitter / X"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href={BRAND_DETAILS.socials.youtube}
-                target="_blank"
-                rel="noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:border-coastal-blue hover:text-white transition-all"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
               </a>
               {/* TikTok — inline SVG as Lucide has no TikTok icon */}
               <a
