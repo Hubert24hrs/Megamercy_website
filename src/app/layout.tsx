@@ -12,37 +12,50 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://magmercy-apartment.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://magmercyapartment.com"),
-  title: "MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos",
+    template: "%s · MagMercy Apartment Ikoyi",
+  },
   description:
-    "Ultra-premium, futuristic short-let apartment in prime Ikoyi, Lagos. 3,400 sq.ft of curated modernist luxury, panoramic Lagos Lagoon views, and 24/7 diplomatic fortress security.",
+    "Ultra-premium short-let penthouse at 89 Lafiaji St, Dolphin Estate, Ikoyi. 100% uninterrupted generator + solar power, biometric security, 1Gbps fiber Wi-Fi, and dedicated private butler. From ₦350,000/night.",
   keywords: [
     "MagMercy Apartment",
     "Luxury short let Lagos",
     "Ikoyi penthouse short let",
+    "Dolphin Estate apartment",
     "Diplomatic apartment Lagos",
-    "Executive apartment Ikoyi",
-    "4K cinematic video walkthrough Lagos apartment",
+    "Executive short let Ikoyi",
+    "4K video walkthrough Lagos apartment",
     "Secure short let Nigeria",
   ],
   authors: [{ name: "MagMercy Hospitality" }],
   openGraph: {
     title: "MagMercy Apartment · The Sanctuary of Modern Sovereignty",
     description:
-      "Ultra-premium, futuristic short-let apartment in Ikoyi, Lagos. 24/7 uninterrupted power, biometric security, and dedicated private butler.",
-    url: "https://magmercyapartment.com",
-    siteName: "MagMercy Apartment",
+      "Ultra-premium short-let penthouse in Dolphin Estate, Ikoyi, Lagos. 100% uninterrupted power, biometric security, and dedicated private butler. From ₦350,000/night.",
+    url: siteUrl,
+    siteName: "MagMercy Apartment Ikoyi",
     images: [
       {
         url: "/images/rooms/magmercy_real_1.jpeg",
         width: 1200,
         height: 630,
-        alt: "MagMercy Luxury Penthouse Ikoyi Lagos",
+        alt: "MagMercy Luxury Penthouse in Dolphin Estate, Ikoyi, Lagos",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MagMercy Apartment · Luxury Penthouse in Ikoyi, Lagos",
+    description:
+      "Ultra-luxury penthouse short-let at 89 Lafiaji St, Dolphin Estate, Ikoyi. 100% power, biometric access, 1Gbps Wi-Fi & private butler.",
+    images: ["/images/rooms/magmercy_real_1.jpeg"],
   },
 };
 

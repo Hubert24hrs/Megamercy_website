@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import AvailabilityCalendar from "@/components/AvailabilityCalendar";
 import {
   Calendar as CalendarIcon,
@@ -16,6 +17,7 @@ import {
   Globe,
   Lock,
   ArrowRight,
+  FileText,
 } from "lucide-react";
 import { CalendarFeedConfig, CalendarEvent, SyncResult } from "@/lib/calendar/types";
 
@@ -151,15 +153,25 @@ export default function AdminCalendarPage() {
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={handleSyncAll}
-          disabled={syncing}
-          className="px-5 py-3 rounded-2xl bg-coastal-blue hover:bg-coastal-blue-hover text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2.5 transition-all shadow-md shadow-coastal-blue/20 self-start md:self-auto disabled:opacity-50"
-        >
-          <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
-          <span>{syncing ? "Synchronizing All Channels..." : "Sync All Channels Now"}</span>
-        </button>
+        <div className="flex items-center gap-3 self-start md:self-auto flex-wrap">
+          <Link
+            href="/admin/listing-kit"
+            className="px-4 py-3 rounded-2xl bg-sand-100 hover:bg-sand-200 border border-charcoal-900/10 text-charcoal-800 text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-sm"
+          >
+            <FileText className="w-4 h-4 text-bronze-600" />
+            <span>Airbnb &amp; Booking.com Kit</span>
+          </Link>
+
+          <button
+            type="button"
+            onClick={handleSyncAll}
+            disabled={syncing}
+            className="px-5 py-3 rounded-2xl bg-coastal-blue hover:bg-coastal-blue-hover text-white text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2.5 transition-all shadow-md shadow-coastal-blue/20 disabled:opacity-50"
+          >
+            <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
+            <span>{syncing ? "Synchronizing All Channels..." : "Sync All Channels Now"}</span>
+          </button>
+        </div>
       </div>
 
       {/* SECTION 1: OUTBOUND FEED (Copy to Airbnb & Booking.com) */}
