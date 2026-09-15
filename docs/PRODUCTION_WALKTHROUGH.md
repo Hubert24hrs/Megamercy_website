@@ -10,13 +10,14 @@ All requested enhancements have been built, verified, and deployed live across y
 
 | Resource | Live Link | Description |
 | :--- | :--- | :--- |
-| **Official Live Website** | [https://magmercy-apartment.vercel.app](https://magmercy-apartment.vercel.app) | 4K video-first luxury experience |
-| **Instagram / TikTok Link Hub** | [https://magmercy-apartment.vercel.app/links](https://magmercy-apartment.vercel.app/links) | Mobile-first bio link portal (also `/bio`) |
-| **Digital Guest Welcome Manual** | [https://magmercy-apartment.vercel.app/guide](https://magmercy-apartment.vercel.app/guide) | Wi-Fi credentials, PIN access & Ikoyi dining |
-| **Airbnb & Booking Listing Kit** | [https://magmercy-apartment.vercel.app/admin/listing-kit](https://magmercy-apartment.vercel.app/admin/listing-kit) | Copy-paste descriptions, titles & rules |
-| **Property Management & Sync** | [https://magmercy-apartment.vercel.app/admin/calendar](https://magmercy-apartment.vercel.app/admin/calendar) | iCal feed management & channel sync |
-| **Direct Reservation & Paystack** | [https://magmercy-apartment.vercel.app/booking](https://magmercy-apartment.vercel.app/booking) | Live booking with Paystack & WhatsApp |
-| **Outbound iCal Feed** | [https://magmercy-apartment.vercel.app/api/calendar/ical?suite=penthouse](https://magmercy-apartment.vercel.app/api/calendar/ical?suite=penthouse) | RFC 5545 feed for Airbnb / Booking.com |
+| **Official Custom Domain** | [https://www.magmercyapartments.com](https://www.magmercyapartments.com) | Official primary domain (`magmercyapartments.com`) |
+| **Vercel Deployment URL** | [https://magmercy-apartment.vercel.app](https://magmercy-apartment.vercel.app) | Underlying Vercel deployment |
+| **Instagram / TikTok Link Hub** | [https://www.magmercyapartments.com/links](https://www.magmercyapartments.com/links) | Mobile-first bio link portal (also `/bio`) |
+| **Digital Guest Welcome Manual** | [https://www.magmercyapartments.com/guide](https://www.magmercyapartments.com/guide) | Wi-Fi credentials, PIN access & Ikoyi dining |
+| **Airbnb & Booking Listing Kit** | [https://www.magmercyapartments.com/admin/listing-kit](https://www.magmercyapartments.com/admin/listing-kit) | Copy-paste descriptions, titles & rules |
+| **Property Management & Sync** | [https://www.magmercyapartments.com/admin/calendar](https://www.magmercyapartments.com/admin/calendar) | iCal feed management & channel sync |
+| **Direct Reservation & Paystack** | [https://www.magmercyapartments.com/booking](https://www.magmercyapartments.com/booking) | Live booking with Paystack & WhatsApp |
+| **Outbound iCal Feed** | [https://www.magmercyapartments.com/api/calendar/ical?suite=penthouse](https://www.magmercyapartments.com/api/calendar/ical?suite=penthouse) | RFC 5545 feed for Airbnb / Booking.com |
 | **GitHub Repository** | [https://github.com/Hubert24hrs/Megamercy_website](https://github.com/Hubert24hrs/Megamercy_website) | Fully updated (`main` branch) |
 
 ---
@@ -25,7 +26,7 @@ All requested enhancements have been built, verified, and deployed live across y
 
 ### 📱 1. WhatsApp & Social Media Rich Previews
 - **Dynamic OpenGraph & Twitter Cards**: Configured in `src/app/layout.tsx`.
-- **Card Preview**: Whenever you share `https://magmercy-apartment.vercel.app` on WhatsApp, iMessage, Twitter/X, or LinkedIn:
+- **Card Preview**: Whenever you share `https://www.magmercyapartments.com` on WhatsApp, iMessage, Twitter/X, or LinkedIn:
   - Displays the authentic penthouse photograph (`magmercy_real_1.jpeg`).
   - Title: *"MagMercy Apartment · Luxury Short-Let Penthouse in Ikoyi, Lagos"*.
   - Description: *"Ultra-premium short-let penthouse at 89 Lafiaji St, Dolphin Estate, Ikoyi. 100% uninterrupted generator + solar power, biometric security, 1Gbps fiber Wi-Fi, and dedicated private butler. From ₦350,000/night."*

@@ -12,7 +12,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://magmercy-apartment.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.magmercyapartments.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -69,6 +69,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
     name: "MagMercy Apartment",
+    url: siteUrl,
     description:
       "Ultra-premium futuristic short-let apartment in Ikoyi, Lagos, Nigeria offering diplomatic security and panoramic lagoon views.",
     address: {

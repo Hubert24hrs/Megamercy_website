@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 /**
  * Public Outbound iCal Feed
  * Copy this URL into Airbnb and Booking.com import settings:
- * e.g. https://magmercylagos.com/api/calendar/ical?suite=penthouse
+ * e.g. https://www.magmercyapartments.com/api/calendar/ical?suite=penthouse
  */
 export async function GET(req: NextRequest) {
   try {

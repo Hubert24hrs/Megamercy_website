@@ -42,7 +42,7 @@ export default function AdminCalendarPage() {
   const [feedSaveMessage, setFeedSaveMessage] = useState<string | null>(null);
 
   // Determine origin for outbound feed URL
-  const [origin, setOrigin] = useState("https://magmercylagos.com");
+  const [origin, setOrigin] = useState("https://www.magmercyapartments.com");
 
   useEffect(() => {
     if (typeof window !== "undefined") {

@@ -2,7 +2,8 @@
 
 > **Location**: 89 Lafiaji Street, Dolphin Estate, Ikoyi, Lagos, Nigeria  
 > **Brand Positioning**: Ultra-premium, futuristic, secure short-let apartment experience for discerning travelers, executives, and diplomats visiting Lagos.  
-> **Official Repository**: [Hubert24hrs/Megamercy_website](https://github.com/Hubert24hrs/Megamercy_website)
+> **Official Repository**: [Hubert24hrs/Megamercy_website](https://github.com/Hubert24hrs/Megamercy_website)  
+> **Official Live Domain**: [https://www.magmercyapartments.com](https://www.magmercyapartments.com) (`magmercyapartments.com`)
 
 ---
 
